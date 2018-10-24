@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">WarframeInformationApp</string>
+    <string name="app_name">WarframeCodex</string>
+    
+    <string-array name="items">
+        <items>Warframes</items>
+        <items>Archwing</items>
+        <items>Primary</items>
+    </string-array>
+
+    <string-array name="prices" >
+        <items>ne</items>
+        <items>ano</items>
+        <items>konecne</items>
+    </string-array>
+
+    <string-array name="descriptions" >
+        <items>ne</items>
+        <items>ano</items>
+        <items>konecne</items>
+    </string-array>
 </resources>
