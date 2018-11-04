@@ -1,21 +1,22 @@
 <resources>
     <string name="app_name">WarframeCodex</string>
-    
+
     <string-array name="items">
-        <items>Warframes</items>
-        <items>Archwing</items>
-        <items>Primary</items>
+        <item>Warframes</item>
+        <item>Archwing</item>
+        <item>Primary</item>
     </string-array>
 
-    <string-array name="prices" >
-        <items>ne</items>
-        <items>ano</items>
-        <items>konecne</items>
+    <string-array name="prices">
+        <item>ne</item>
+        <item>ano</item>
+        <item>konecne</item>
     </string-array>
 
-    <string-array name="descriptions" >
-        <items>ne</items>
-        <items>ano</items>
-        <items>konecne</items>
+    <string-array name="descriptions">
+        <item>ne</item>
+        <item>ano</item>
+        <item>konecne</item>
     </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

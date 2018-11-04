@@ -17,9 +17,10 @@ public class ItemAdapter extends BaseAdapter {
     public ItemAdapter(Context c, String[] i, String[] p, String[] d){
         items = i;
         prices = p;
-        descriptions = p;
+        descriptions = d;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+
 
     @Override
     public int getCount() {
@@ -38,20 +39,18 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        View v = mInflater.inflate(R.layout.my_list_view, null);
+        //TextView nameTextView = (TextView) v.findViewById(R.id.nameTextView);
+        //TextView priceTextView = (TextView) v.findViewById(R.id.priceTextView);
+        //TextView descriptionsTextView = (TextView) v.findViewById(R.id.descriptionTextView);
 
-        View v = mInflater.inflate(R.layout.listview_items, null);
-        TextView nameTextView = (TextView) v.findViewById(R.id.nameTextView);
-        TextView descriptionTextView = (TextView) v.findViewById(R.id.descriptionTextView);
-        TextView priceTextView = (TextView) v.findViewById(R.id.priceTextView);
-
-        String name = items[position];
-        String cost = prices[position];
+        /*String name = items[position];
         String desc = descriptions[position];
+        String cost = prices[position];
 
         nameTextView.setText(name);
-        priceTextView.setText(cost);
-        descriptionTextView.setText(desc);
-
+        descriptionsTextView.setText(desc);
+        priceTextView.setText(cost);*/
 
         return v;
     }
