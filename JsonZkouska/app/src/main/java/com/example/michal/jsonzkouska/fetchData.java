@@ -15,7 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class fetchData extends AsyncTask<Void,Void,Void> {
-    String data;
+    String data = "";
     String dataParsed = "";
     String singleParsed = "";
     @Override
@@ -39,9 +39,12 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
                                 "Password:" + JO.get("password") + "\n"+
                                 "Contact:" + JO.get("contact") + "\n"+
                                 "Country:" + JO.get("country") + "\n";
+
+                dataParsed = dataParsed + singleParsed + "\n";
             }
 
-            dataParsed = dataParsed + singleParsed + "\n";
+
+
 
 
         } catch (MalformedURLException e) {
