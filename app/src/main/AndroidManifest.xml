@@ -16,8 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".ListOfItemsActivity"></activity>
+        <activity
+            android:name=".DetailActivity"
+            android:label="Get name"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ListOfItemsActivity"
+            android:label="Get name"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".zkouska"></activity>
     </application>
 
 </manifest>

@@ -10,12 +10,12 @@ import android.widget.TextView;
 public class ItemAdapter extends BaseAdapter {
 
     LayoutInflater mInflater;
-    String[] items;
+    String[] warframes;
     String[] prices;
     String[] descriptions;
 
     public ItemAdapter(Context c, String[] i, String[] p, String[] d){
-        items = i;
+        warframes = i;
         prices = p;
         descriptions = d;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -24,12 +24,12 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return items.length;
+        return warframes.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return items[position];
+        return warframes[position];
     }
 
     @Override

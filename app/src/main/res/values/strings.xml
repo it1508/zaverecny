@@ -1,22 +1,76 @@
 <resources>
     <string name="app_name">WarframeCodex</string>
 
-    <string-array name="items">
+    <string-array name="main_board">
         <item>Warframes</item>
         <item>Archwing</item>
         <item>Primary</item>
+        <item>Secondary</item>
+        <item>Melee</item>
+        <item>Companions</item>
+    </string-array>
+
+    <string-array name="warframes">
+        <item>Excalibur</item>
+        <item>Nova</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+    </string-array>
+
+    <string-array name="melee">
+        <item>Zaw</item>
+        <item>Ack and Brunt</item>
+        <item>Sarpa</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+    </string-array>
+
+    <string-array name="secondary">
+        <item>Pandero</item>
+        <item>Lato</item>
+        <item>Aklato</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+    </string-array>
+
+    <string-array name="primary">
+        <item>Opticor</item>
+        <item>Ignis</item>
+        <item>Ignis Wraith</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+    </string-array>
+
+    <string-array name="companions">
+        <item>smeeta Cavat</item>
+        <item>Helios</item>
+        <item>Helios prime</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
     </string-array>
 
     <string-array name="prices">
         <item>ne</item>
         <item>ano</item>
         <item>konecne</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
     </string-array>
 
     <string-array name="descriptions">
         <item>ne</item>
         <item>ano</item>
         <item>konecne</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
     </string-array>
     <string name="title_activity_main2">Main2Activity</string>
 </resources>

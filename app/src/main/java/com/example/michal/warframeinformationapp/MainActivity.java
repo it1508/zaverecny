@@ -12,7 +12,7 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
 
     ListView myListView;
-    String[] items;
+    String[] main_board;
     String[] prices;
     String[] descriptions;
 
@@ -23,19 +23,19 @@ public class MainActivity extends AppCompatActivity {
 
         Resources res = getResources();
         myListView = (ListView) findViewById(R.id.myListView);
-        items = res.getStringArray(R.array.items);
-        //prices = res.getStringArray(R.array.prices);
-        //descriptions = res.getStringArray(R.array.descriptions);
+        main_board = res.getStringArray(R.array.main_board);
+        prices = res.getStringArray(R.array.prices);
+        descriptions = res.getStringArray(R.array.descriptions);
 
-        //ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
-        myListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, items));
+        //ItemAdapter itemAdapter = new ItemAdapter(this, main_board, prices, descriptions);
+        myListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, main_board));
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
-                showDetailActivity.putExtra("com.example.michal.ITEM_INDEX", position);
-                startActivity(showDetailActivity);
+                Intent showListOfItemsActivity = new Intent(getApplicationContext(), ListOfItemsActivity.class);
+                showListOfItemsActivity.putExtra("ITEM_ID",position);
+                startActivity(showListOfItemsActivity);
             }
         });
     }
