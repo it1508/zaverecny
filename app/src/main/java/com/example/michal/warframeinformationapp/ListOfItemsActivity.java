@@ -38,14 +38,19 @@ public class ListOfItemsActivity extends AppCompatActivity {
             switch (index) {
                 case 0:
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, warframes));
+                    break;
                 case 1:
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, melee));
+                    break;
                 case 2:
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, secondary));
+                    break;
                 case 3:
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, primary));
+                    break;
                 case 4:
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, companios));
+                    break;
                 default:
                     break;
             }
