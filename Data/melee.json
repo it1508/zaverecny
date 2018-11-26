@@ -4,7 +4,7 @@
 	"totalDamage": 50,
 	"impact": 5,
       	"slash": 40,
-      	"puncture": 5
+      	"puncture": 5,
 	"damagePerSecond": 42,
 	"trigger": "Melee",
 	"description": "Tyl Regor’s custom axe and shield are how he likes to eliminate ‘frustrations’.",
@@ -30,7 +30,7 @@
 	"totalDamage": 55,
 	"impact": 38.5,
 	"slash": 8.2,
-	"puncture": 8.3
+	"puncture": 8.3,
 	"damagePerSecond": 69,
 	"trigger": "Melee",
 	"description": "Fashioned with Grineer materials and balanced for marine infantry use, the Amphis is a traditional staff weapon that has received a monstrous makeover that enables shock damage on jump attacks. Connects with multiple enemies with each strike.",
@@ -54,7 +54,7 @@
 	"totalDamage": 70,
 	"impact": 10.5,
       	"slash": 3.5,
-      	"puncture": 56
+      	"puncture": 56,
 	"damagePerSecond": 76,
 	"trigger": "Melee",
 	"description": "Reap havoc with this full sized Tenno-crafted scythe.",
@@ -78,7 +78,7 @@
 	"totalDamage": 30,
 	"impact": 21,
 	"slash": 4.5,
-	"puncture": 4.5
+	"puncture": 4.5,
 	"damagePerSecond": 35,
 	"trigger": "Melee",
 	"description": "A pair of mighty gauntlets, the Ankyros were designed by the Tenno for close quarters combat. What they lack in range they make up for in speed.",
@@ -102,7 +102,7 @@
 	"totalDamage": 38,
 	 "impact": 26.6,
 	"slash": 5.7,
-	"puncture": 5.7
+	"puncture": 5.7,
 	"damagePerSecond": 48,
 	"trigger": "Melee",
 	"description": "This Orokin variation of the Ankyros is superior to its successor in every way.",
