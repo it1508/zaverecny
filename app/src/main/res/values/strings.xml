@@ -19,6 +19,15 @@
         <item>Hydroid</item>
     </string-array>
 
+    <string-array name="archwing">
+        <item>Odonata</item>
+        <item>Itzal</item>
+        <item>Odonata Prime</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+        <item>Hydroid</item>
+    </string-array>
+
     <string-array name="melee">
         <item>Zaw</item>
         <item>Ack and Brunt</item>

@@ -17,6 +17,14 @@ public class ListOfItemsActivity extends AppCompatActivity {
     String[] secondary;
     String[] primary;
     String[] companios;
+    String[] archwing;
+     String mel = "";
+     String frame = "";
+     String sec = "";
+     String prim = "";
+     String comp = "";
+     String arch = "";
+    String parse = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +38,59 @@ public class ListOfItemsActivity extends AppCompatActivity {
         secondary = res.getStringArray(R.array.secondary);
         primary = res.getStringArray(R.array.primary);
         companios = res.getStringArray(R.array.companions);
+        archwing = res.getStringArray(R.array.archwing);
+        JSONFrameparsing warframe = new JSONFrameparsing();
+        JSONArchparsing archwings = new JSONArchparsing();
+        JSONMeleeparsing melees = new JSONMeleeparsing();
+        JSONSecondparsing secondarys = new JSONSecondparsing();
+        JSONPrimaryparsing primarys = new JSONPrimaryparsing();
+        JSONCompaparsing companioss = new JSONCompaparsing();
+        warframe.execute();
+        primarys.execute();
+        secondarys.execute();
+        melees.execute();
+        companioss.execute();
 
-        //ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
+        frame = JSONFrameparsing.dataParsed;
+        comp = JSONFrameparsing.dataParsed;
+        mel = JSONFrameparsing.dataParsed;
+        sec = JSONFrameparsing.dataParsed;
+        prim = JSONFrameparsing.dataParsed;
+        arch = JSONFrameparsing.dataParsed;
+
+
+
+
         Intent in = getIntent();
         int index = in.getIntExtra("ITEM_ID",-1);
         if(index > -1) {
             switch (index) {
                 case 0:
+                    //JSONFrameparsing warframe = new JSONFrameparsing();
+                    //warframe.execute();
+                    parse = frame + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, warframes));
                     break;
                 case 1:
+<<<<<<< HEAD
+                    //JSONFrameparsing archwings = new JSONFrameparsing();
+                    //archwings.execute();
+                    parse = arch + "\n";
+                    itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, archwing));
+                    break;
+                case 2:
+                    //JSONFrameparsing melees = new JSONFrameparsing();
+                    //primarys.execute();
+                    parse = prim + "\n";
+                    itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, primary));
+                    break;
+                case 3:
+                    //JSONFrameparsing secondarys = new JSONFrameparsing();
+                    //secondarys.execute();
+                    parse = sec + "\n";
+                    itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, secondary));
+                    break;
+=======
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, melee));
                     break;
                 case 2:
@@ -48,15 +99,24 @@ public class ListOfItemsActivity extends AppCompatActivity {
                 case 3:
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, primary));
                     break;
+>>>>>>> 7a88da1d6ecc236a4fc69ba533535798ed62bb16
                 case 4:
+                    //JSONFrameparsing primarys = new JSONFrameparsing();
+                    //melees.execute();
+                    parse = mel + "\n";
+                    itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, melee));
+                    break;
+                case 5:
+                    //JSONFrameparsing companioss = new JSONFrameparsing();
+                    //companioss.execute();
+                    parse = comp + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, companios));
                     break;
                 default:
                     break;
             }
         }
-        //itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, warframes));
-        //ItemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, warframes));
+
 
         itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -64,6 +124,7 @@ public class ListOfItemsActivity extends AppCompatActivity {
                 Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
                 showDetailActivity.putExtra("com.example.michal.ITEM", position);
                 startActivity(showDetailActivity);
+                DetailActivity.data.setText(parse);
             }
         });
     }

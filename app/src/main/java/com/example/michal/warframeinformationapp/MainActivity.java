@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         prices = res.getStringArray(R.array.prices);
         descriptions = res.getStringArray(R.array.descriptions);
 
-        //ItemAdapter itemAdapter = new ItemAdapter(this, main_board, prices, descriptions);
         myListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, main_board));
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -17,17 +17,19 @@ public class DetailActivity extends AppCompatActivity {
     String[] warframes;
     String[] prices;
     String[] descriptions;
+    public static TextView data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        Resources res = getResources();
+        /*Resources res = getResources();
         warframes = res.getStringArray(R.array.warframes);
         prices = res.getStringArray(R.array.prices);
         descriptions = res.getStringArray(R.array.descriptions);
-        Intent in = getIntent();
-        int index = in.getIntExtra("com.example.michal.ITEM", -1);
+        Intent in = getIntent();*/
+        data = (TextView) findViewById(R.id.priceTextView);
+        /*int index = in.getIntExtra("com.example.michal.ITEM", -1);
         if(index > -1){
             int pic = getImg(index);
             ImageView img = (ImageView) findViewById(R.id.ItemImageView);
@@ -39,14 +41,7 @@ public class DetailActivity extends AppCompatActivity {
             nameTextView.setText(name);
             priceTextView.setText(price);
         }
-            /*Resources res = getResources();
-            secondListView = (ListView) findViewById(R.id.myListView);
-            items = res.getStringArray(R.array.items);
-            prices = res.getStringArray(R.array.prices);
-            descriptions = res.getStringArray(R.array.descriptions);
 
-            ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
-            secondListView.setAdapter(itemAdapter);*/
     }
     private int getImg(int index){
         switch (index){
@@ -73,7 +68,7 @@ public class DetailActivity extends AppCompatActivity {
 
         options.inJustDecodeBounds = false;
         Bitmap scaleImg = BitmapFactory.decodeResource(getResources(),pic,options);
-        img.setImageBitmap(scaleImg);
+        img.setImageBitmap(scaleImg);*/
     }
 
 }
