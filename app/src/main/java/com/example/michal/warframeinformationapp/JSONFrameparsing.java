@@ -16,11 +16,17 @@ import java.net.URL;
 
 public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
 
+    private final TaskCompleted listener;
     String data = "";
     static String dataParsed = "";
     String singleParsed = "";
     String items = "";
 
+
+    public JSONFrameparsing(TaskCompleted listener){
+        this.listener=listener;
+    }
+    
     @Override
     protected Void doInBackground(Void... voids) {
         try {
@@ -70,8 +76,10 @@ public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        //ListOfItemsActivity.frame = dataParsed;
+        ListOfItemsActivity.frame = dataParsed;
+        DetailActivity.data.setText(dataParsed);
+        listener.onTaskComplete(dataParsed);
     }
-
+    
 
 }

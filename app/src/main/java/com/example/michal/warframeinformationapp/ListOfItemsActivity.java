@@ -10,7 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class ListOfItemsActivity extends AppCompatActivity {
+
+public class ListOfItemsActivity extends AppCompatActivity implements TaskCompleted {
     ListView itemsListView;
     String[] warframes;
     String[] melee;
@@ -18,12 +19,12 @@ public class ListOfItemsActivity extends AppCompatActivity {
     String[] primary;
     String[] companios;
     String[] archwing;
-     String mel = "";
-     String frame = "";
-     String sec = "";
-     String prim = "";
-     String comp = "";
-     String arch = "";
+     public  String mel = "";
+    public static String frame = "";
+    public static String sec = "";
+    public static String prim = "";
+    public static String comp = "";
+    public static String arch = "";
     String parse = "";
 
     @Override
@@ -39,7 +40,7 @@ public class ListOfItemsActivity extends AppCompatActivity {
         primary = res.getStringArray(R.array.primary);
         companios = res.getStringArray(R.array.companions);
         archwing = res.getStringArray(R.array.archwing);
-        JSONFrameparsing warframe = new JSONFrameparsing();
+        JSONFrameparsing warframe = new JSONFrameparsing(ListOfItemsActivity.this);
         JSONArchparsing archwings = new JSONArchparsing();
         JSONMeleeparsing melees = new JSONMeleeparsing();
         JSONSecondparsing secondarys = new JSONSecondparsing();
@@ -51,16 +52,34 @@ public class ListOfItemsActivity extends AppCompatActivity {
         melees.execute();
         companioss.execute();
 
-        frame = JSONFrameparsing.dataParsed;
+        /*frame = JSONFrameparsing.dataParsed;
         comp = JSONFrameparsing.dataParsed;
         mel = JSONFrameparsing.dataParsed;
         sec = JSONFrameparsing.dataParsed;
         prim = JSONFrameparsing.dataParsed;
-        arch = JSONFrameparsing.dataParsed;
+        arch = JSONFrameparsing.dataParsed;*/
 
 
 
 
+
+
+
+        itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
+                showDetailActivity.putExtra("com.example.michal.ITEM", position);
+                startActivity(showDetailActivity);
+                DetailActivity.data.setText(parse);
+            }
+        });
+    }
+
+
+    @Override
+    public void onTaskComplete(String result) {
+        frame = result;
         Intent in = getIntent();
         int index = in.getIntExtra("ITEM_ID",-1);
         if(index > -1) {
@@ -72,7 +91,6 @@ public class ListOfItemsActivity extends AppCompatActivity {
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, warframes));
                     break;
                 case 1:
-<<<<<<< HEAD
                     //JSONFrameparsing archwings = new JSONFrameparsing();
                     //archwings.execute();
                     parse = arch + "\n";
@@ -90,16 +108,6 @@ public class ListOfItemsActivity extends AppCompatActivity {
                     parse = sec + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, secondary));
                     break;
-=======
-                    itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, melee));
-                    break;
-                case 2:
-                    itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, secondary));
-                    break;
-                case 3:
-                    itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, primary));
-                    break;
->>>>>>> 7a88da1d6ecc236a4fc69ba533535798ed62bb16
                 case 4:
                     //JSONFrameparsing primarys = new JSONFrameparsing();
                     //melees.execute();
@@ -116,8 +124,6 @@ public class ListOfItemsActivity extends AppCompatActivity {
                     break;
             }
         }
-
-
         itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
