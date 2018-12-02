@@ -69,7 +69,7 @@ public class JSONCompaparsing extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        ListOfItemsActivity.comp.matches(this.data);
+        //ListOfItemsActivity.comp.matches(this.data);
 
     }
 

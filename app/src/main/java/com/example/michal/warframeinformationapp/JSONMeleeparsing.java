@@ -70,7 +70,7 @@ public class JSONMeleeparsing extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        ListOfItemsActivity.mel.matches(this.data);
+        //ListOfItemsActivity.mel.matches(this.data);
     }
 
 

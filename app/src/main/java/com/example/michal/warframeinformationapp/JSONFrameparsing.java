@@ -21,6 +21,17 @@ public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
     static String dataParsed = "";
     String singleParsed = "";
     String items = "";
+    String mr[];
+    String location[];
+    String hp[];
+    String shield[];
+    String armor[];
+    String description[];
+    String speed[];
+    String power[];
+    String polarities[];
+    String name[];
+
 
 
     public JSONFrameparsing(TaskCompleted listener){
@@ -44,19 +55,20 @@ public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
             JSONArray JA = new JSONArray(data);
             for(int i = 0;i <JA.length();i++){
                 JSONObject JO = (JSONObject) JA.get(i);
-                singleParsed =  "Name:" + JO.get("name") + "\n"+
-                        "MR:" + JO.get("mr") + "\n"+
-                        "health:" + JO.get("health") + "\n"+
-                        "shield:" + JO.get("shield") + "\n"+
-                        "armor:" + JO.get("armor") + "\n"+
-                        "power:" + JO.get("power") + "\n"+
-                        "speed:" + JO.get("speed") + "\n"+
-                        "polarities:" + JO.get("polarities") + "\n"+
-                        "description:" + JO.get("description") + "\n";
+                name[i] =  "Name:" + JO.get("name");
+                mr[i] = "MR:" + JO.get("mr");
+                hp[i] = "health:" + JO.get("health");
+                shield[i] = "shield:" + JO.get("shield");
+                armor [i] = "armor:" + JO.get("armor");
+                power[i] = "power:" + JO.get("power");
+                speed[i] = "speed:" + JO.get("speed");
+                description[i] = "description:" + JO.get("description");
+                polarities [i] = "polarities:" + JO.get("polarities");
+
                 //"location:" + JO.get("location") + "\n";
                 //"relic:" + JO.get("relic") + "\n";
 
-                dataParsed = dataParsed + singleParsed + "\n";
+
             }
 
 
@@ -76,9 +88,9 @@ public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        ListOfItemsActivity.frame = dataParsed;
-        DetailActivity.data.setText(dataParsed);
-        listener.onTaskComplete(dataParsed);
+        //ListOfItemsActivity.frame = dataParsed;
+        //DetailActivity.armor = armor;
+        listener.onTaskComplete(name,mr,hp,shield,armor,power,speed,description,polarities);
     }
     
 

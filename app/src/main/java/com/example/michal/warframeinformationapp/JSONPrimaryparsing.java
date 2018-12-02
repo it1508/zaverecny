@@ -70,7 +70,7 @@ public class JSONPrimaryparsing extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        ListOfItemsActivity.prim.matches(this.data);
+        //ListOfItemsActivity.prim.matches(this.data);
     }
 
 

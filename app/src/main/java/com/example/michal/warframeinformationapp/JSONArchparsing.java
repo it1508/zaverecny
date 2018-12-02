@@ -70,7 +70,7 @@ public class JSONArchparsing extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        ListOfItemsActivity.arch.matches(this.data);
+        //ListOfItemsActivity.arch.matches(this.data);
     }
 
 

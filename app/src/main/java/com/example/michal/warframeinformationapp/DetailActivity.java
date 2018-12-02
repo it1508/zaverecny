@@ -11,13 +11,25 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class DetailActivity extends AppCompatActivity {
+import java.util.concurrent.ExecutionException;
+
+public class DetailActivity extends AppCompatActivity implements TaskCompleted{
 
     //ListView secondListView;
     String[] warframes;
     String[] prices;
     String[] descriptions;
     public static TextView data;
+    String mr1[];
+    String location1[];
+    String hp1[];
+    String shield1[];
+    String armor1[];
+    String description1[];
+    String speed1[];
+    String power1[];
+    String polarities1[];
+    String name1[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +40,18 @@ public class DetailActivity extends AppCompatActivity {
         prices = res.getStringArray(R.array.prices);
         descriptions = res.getStringArray(R.array.descriptions);
         Intent in = getIntent();*/
+
+        JSONFrameparsing warframe = new JSONFrameparsing(DetailActivity.this);
+        try {
+            warframe.execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         data = (TextView) findViewById(R.id.priceTextView);
+        data.setText(name1[0]);
         /*int index = in.getIntExtra("com.example.michal.ITEM", -1);
         if(index > -1){
             int pic = getImg(index);
@@ -71,4 +94,16 @@ public class DetailActivity extends AppCompatActivity {
         img.setImageBitmap(scaleImg);*/
     }
 
+    @Override
+    public void onTaskComplete(String[] name, String[] mr, String[] health, String[] shield, String[] armor, String[] power, String[] speed, String[] description, String[] polarities) {
+    name1 = name;
+    mr1 = mr;
+    hp1 = health;
+    shield1 = shield;
+    armor1 = armor;
+    power1 = power;
+    description1 = description;
+    speed1 = speed;
+    polarities1 = polarities;
+    }
 }

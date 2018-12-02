@@ -70,7 +70,7 @@ public class JSONSecondparsing extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        ListOfItemsActivity.sec.matches(this.data);
+        //ListOfItemsActivity.sec.matches(this.data);
     }
 
 
