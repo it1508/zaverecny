@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity /*implements TaskCompleted*/{
 
     ListView myListView;
     String[] main_board;
@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //JSONFrameparsing warframe = new JSONFrameparsing(MainActivity.this);
+        //warframe.execute();
 
         Resources res = getResources();
         myListView = (ListView) findViewById(R.id.myListView);
@@ -38,4 +42,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    /*@Override
+    public void onTaskComplete (final String[] name, final String[] mr, final String[] health, final String[] shield, final String[] armor, final String[] power, final String[] speed, final String[] description, final String[] polarities){
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent showListOfItemsActivity = new Intent(getApplicationContext(), ListOfItemsActivity.class);
+                showListOfItemsActivity.putExtra("ITEM_ID",position);
+                startActivity(showListOfItemsActivity);
+            }
+        });
+    }*/
+
 }

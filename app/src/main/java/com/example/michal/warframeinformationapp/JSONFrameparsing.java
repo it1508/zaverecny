@@ -16,7 +16,7 @@ import java.net.URL;
 
 public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
 
-    //private final TaskCompleted listener;
+    private final TaskCompleted listener;
     String data = "";
     static String dataParsed = "";
     String singleParsed = "";
@@ -34,9 +34,9 @@ public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
 
 
 
-    /*public JSONFrameparsing(TaskCompleted listener){
+    public JSONFrameparsing(TaskCompleted listener){
         this.listener=listener;
-    }*/
+    }
     
     @Override
     protected Void doInBackground(Void... voids) {
@@ -56,14 +56,14 @@ public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
             for(int i = 0;i <JA.length();i++){
                 JSONObject JO = (JSONObject) JA.get(i);
                 name[i] =  "Name:" + JO.get("name");
-                mr[i] = "MR:" + JO.get("mr");
+                /*mr[i] = "MR:" + JO.get("mr");
                 hp[i] = "health:" + JO.get("health");
                 shield[i] = "shield:" + JO.get("shield");
                 armor [i] = "armor:" + JO.get("armor");
                 power[i] = "power:" + JO.get("power");
                 speed[i] = "speed:" + JO.get("speed");
                 description[i] = "description:" + JO.get("description");
-                polarities [i] = "polarities:" + JO.get("polarities");
+                polarities [i] = "polarities:" + JO.get("polarities");*/
 
                 //"location:" + JO.get("location") + "\n";
                 //"relic:" + JO.get("relic") + "\n";
@@ -90,8 +90,8 @@ public class JSONFrameparsing extends AsyncTask<Void, Void, Void> {
         super.onPostExecute(aVoid);
         //ListOfItemsActivity.frame = dataParsed;
         //DetailActivity.armor = armor;
-        //listener.onTaskComplete(name,mr,hp,shield,armor,power,speed,description,polarities);
-        DetailActivity.data.setText(name[0]);
+        listener.onTaskComplete(name/*,mr,hp,shield,armor,power,speed,description,polarities*/);
+        //DetailActivity.data.setText(name[0]);
     }
     
 
