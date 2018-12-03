@@ -9,11 +9,12 @@ import android.os.Bundle;
 import android.view.Display;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
 
-public class DetailActivity extends AppCompatActivity implements TaskCompleted{
+public class DetailActivity extends AppCompatActivity /*implements TaskCompleted*/{
 
     //ListView secondListView;
     String[] warframes;
@@ -41,17 +42,29 @@ public class DetailActivity extends AppCompatActivity implements TaskCompleted{
         descriptions = res.getStringArray(R.array.descriptions);
         Intent in = getIntent();*/
 
-        JSONFrameparsing warframe = new JSONFrameparsing(DetailActivity.this);
+        /*JSONFrameparsing warframe = new JSONFrameparsing(DetailActivity.this);
         try {
             warframe.execute().get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
+        /*Intent in = getIntent();
+        int index = in.getIntExtra("com.example.michal.ITEM", -1);
+        name1 = in.getStringArrayExtra("com.example.michal.FRAME");
+        mr1 = in.getStringArrayExtra("com.example.michal.MR");
+        hp1 = in.getStringArrayExtra("com.example.michal.HP");
+        shield1 = in.getStringArrayExtra("com.example.michal.SHIELD");
+        armor1 = in.getStringArrayExtra("com.example.michal.ARMOR");
+        polarities1 = in.getStringArrayExtra("com.example.michal.POLARITIES");
+        description1 = in.getStringArrayExtra("com.example.michal.DESCRIPTION");
+        speed1 = in.getStringArrayExtra("com.example.michal.SPEED");
+        power1 = in.getStringArrayExtra("com.example.michal.POWER");*/
 
         data = (TextView) findViewById(R.id.priceTextView);
-        data.setText(name1[0]);
+        //data.setText(name1[index]);
+
         /*int index = in.getIntExtra("com.example.michal.ITEM", -1);
         if(index > -1){
             int pic = getImg(index);
@@ -94,7 +107,7 @@ public class DetailActivity extends AppCompatActivity implements TaskCompleted{
         img.setImageBitmap(scaleImg);*/
     }
 
-    @Override
+    /*@Override
     public void onTaskComplete(String[] name, String[] mr, String[] health, String[] shield, String[] armor, String[] power, String[] speed, String[] description, String[] polarities) {
     name1 = name;
     mr1 = mr;
@@ -105,5 +118,5 @@ public class DetailActivity extends AppCompatActivity implements TaskCompleted{
     description1 = description;
     speed1 = speed;
     polarities1 = polarities;
-    }
+    }*/
 }

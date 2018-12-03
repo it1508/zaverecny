@@ -20,7 +20,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
     String[] companios;
     String[] archwing;
     String mel = "";
-    String frame = "";
+    String frame[];
     String sec = "";
     String prim = "";
     String comp = "";
@@ -41,16 +41,16 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
         companios = res.getStringArray(R.array.companions);
         archwing = res.getStringArray(R.array.archwing);
         //JSONFrameparsing warframe = new JSONFrameparsing(ListOfItemsActivity.this);
-        JSONArchparsing archwings = new JSONArchparsing();
+        /*JSONArchparsing archwings = new JSONArchparsing();
         JSONMeleeparsing melees = new JSONMeleeparsing();
-        JSONSecondparsing secondarys = new JSONSecondparsing();
-        JSONPrimaryparsing primarys = new JSONPrimaryparsing();
-        JSONCompaparsing companioss = new JSONCompaparsing();
+        JSONSecondparsing secondarys = new JSONSecondparsing();*/
+        JSONFrameparsing primarys = new JSONFrameparsing();
+        //JSONCompaparsing companioss = new JSONCompaparsing();
         //warframe.execute();
         primarys.execute();
-        secondarys.execute();
-        melees.execute();
-        companioss.execute();
+        //secondarys.execute();
+        //melees.execute();
+        //companioss.execute();
 
         /*frame = JSONFrameparsing.dataParsed;
         comp = JSONFrameparsing.dataParsed;
@@ -108,7 +108,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
-                showDetailActivity.putExtra
+                //showDetailActivity.putExtra
                 startActivity(showDetailActivity);
                 //DetailActivity.data.setText(parse);
             }
@@ -116,46 +116,46 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
     }
 
     /*@Override
-    public void onTaskComplete (String result){
-        frame = result;
-        Intent in = getIntent();
+    public void onTaskComplete (final String[] name, final String[] mr, final String[] health, final String[] shield, final String[] armor, final String[] power, final String[] speed, final String[] description, final String[] polarities){
+        //frame = name;
+        /*Intent in = getIntent();
         int index = in.getIntExtra("ITEM_ID", -1);
         if (index > -1) {
             switch (index) {
                 case 0:
                     //JSONFrameparsing warframe = new JSONFrameparsing();
                     //warframe.execute();
-                    parse = frame + "\n";
+                    //parse = frame + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, warframes));
                     break;
                 case 1:
                     //JSONFrameparsing archwings = new JSONFrameparsing();
                     //archwings.execute();
-                    parse = arch + "\n";
+                    //parse = arch + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, archwing));
                     break;
                 case 2:
                     //JSONFrameparsing melees = new JSONFrameparsing();
                     //primarys.execute();
-                    parse = prim + "\n";
+                    //parse = prim + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, primary));
                     break;
                 case 3:
                     //JSONFrameparsing secondarys = new JSONFrameparsing();
                     //secondarys.execute();
-                    parse = sec + "\n";
+                    //parse = sec + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, secondary));
                     break;
                 case 4:
                     //JSONFrameparsing primarys = new JSONFrameparsing();
                     //melees.execute();
-                    parse = mel + "\n";
+                    //parse = mel + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, melee));
                     break;
                 case 5:
                     //JSONFrameparsing companioss = new JSONFrameparsing();
                     //companioss.execute();
-                    parse = comp + "\n";
+                    //parse = comp + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, companios));
                     break;
                 default:
@@ -167,9 +167,18 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
+                showDetailActivity.putExtra("com.example.michal.FRAME", name);
+                showDetailActivity.putExtra("com.example.michal.MR", mr);
+                showDetailActivity.putExtra("com.example.michal.HP", health);
+                showDetailActivity.putExtra("com.example.michal.SHIELD", shield);
+                showDetailActivity.putExtra("com.example.michal.ARMOR", armor);
+                showDetailActivity.putExtra("com.example.michal.POWER", power);
+                showDetailActivity.putExtra("com.example.michal.SPEED", speed);
+                showDetailActivity.putExtra("com.example.michal.DESCRIPTION", description);
+                showDetailActivity.putExtra("com.example.michal.POLARITIES", polarities);
                 showDetailActivity.putExtra("com.example.michal.ITEM", position);
                 startActivity(showDetailActivity);
-                DetailActivity.data.setText(parse);
+                //DetailActivity.data.setText(parse);
             }
         });
     }*/
