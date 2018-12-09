@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class DetailActivity extends AppCompatActivity /*implements TaskCompleted*/{
@@ -30,7 +31,7 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
     String speed1[];
     String power1[];
     String polarities1[];
-    String name1[];
+    ArrayList<String> name = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +51,10 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
-        /*Intent in = getIntent();
-        int index = in.getIntExtra("com.example.michal.ITEM", -1);
-        name1 = in.getStringArrayExtra("com.example.michal.FRAME");
-        mr1 = in.getStringArrayExtra("com.example.michal.MR");
+        Intent in = getIntent();
+        int index = in.getIntExtra("com.example.michal.ITEM",-1);
+        name = in.getStringArrayListExtra("com.example.michal.FRAME");
+        /*mr1 = in.getStringArrayExtra("com.example.michal.MR");
         hp1 = in.getStringArrayExtra("com.example.michal.HP");
         shield1 = in.getStringArrayExtra("com.example.michal.SHIELD");
         armor1 = in.getStringArrayExtra("com.example.michal.ARMOR");
@@ -63,7 +64,7 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         power1 = in.getStringArrayExtra("com.example.michal.POWER");*/
 
         data = (TextView) findViewById(R.id.priceTextView);
-        //data.setText(name1[index]);
+        data.setText(name.get(index));
 
         /*int index = in.getIntExtra("com.example.michal.ITEM", -1);
         if(index > -1){

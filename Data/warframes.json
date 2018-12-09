@@ -30,27 +30,27 @@
 	"speed": "1.1",
 	"polarities": "2x madurai",
 	"description": "This is Banshee, stealthy and ranged.\nNo one puts Banshee in a corner, Tenno. The element of surprise is in her favor.\n_Lotus_",
-	"location": "Tenno Lab Research (Void Relics)"
+	"location": "Tenno Lab Research"
 }, {
 	"name": "Ash Prime",
 	"description": "This is Ash, lethal and elusive.\nAsh can remain unseen, but his effects on the battlefield can be felt by all. Keep an eye out, Tenno.\n_Lotus_",
-	"relic": "In the vault",
 	"mr": "0",
 	"health": "150/450",
 	"shield": "125/375",
 	"armor": "150",
 	"speed": "1.2",
 	"power": "100/150",
-	"polarities": "1x naramon , 2x madurai"
+	"polarities": "1x naramon , 2x madurai",
+	"location": "relics"
 }, {
 	"name": "Banshee Prime",
 	"description": "This is Banshee, stealthy and ranged.\nNo one puts Banshee in a corner, Tenno. The element of surprise is in her favor.\n_Lotus_",
-	"relic": "Axi C3, (Lith B5, Neo K2, Neo S7), Meso B2, Neo B5",
 	"mr": "8",
 	"health": "100/300",
 	"shield": "100/300",
 	"armor": "65",
 	"speed": "1.15",
 	"power": "175/262.5",
-	"polarities": "1x naramon, 2x madurai"
+	"polarities": "1x naramon, 2x madurai",
+	"location": "Axi C3, (Lith B5, Neo K2, Neo S7), Meso B2, Neo B"
 }]

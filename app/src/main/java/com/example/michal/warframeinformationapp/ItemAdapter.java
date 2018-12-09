@@ -11,13 +11,13 @@ public class ItemAdapter extends BaseAdapter {
 
     LayoutInflater mInflater;
     String[] warframes;
-    String[] prices;
+    String[] name;
     String[] descriptions;
 
-    public ItemAdapter(Context c, String[] i, String[] p, String[] d){
+    public ItemAdapter(Context c, String[] i/*, String[] n, String[] d*/){
         warframes = i;
-        prices = p;
-        descriptions = d;
+        //name = n;
+        //descriptions = d;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -40,7 +40,9 @@ public class ItemAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = mInflater.inflate(R.layout.my_list_view, null);
-
+        TextView frameNameTextView = (TextView) v.findViewById(R.id.frameNameTextView);
+        String frame = name[position];
+        frameNameTextView.setText(frame);
 
         return v;
     }
