@@ -284,7 +284,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String accuracy = c.getString("accuracy");
                                     String reloadTime = c.getString("reloadTime");
                                     String magazinesize = c.getString("magazineSize");
-                                    String location = c.getString("location");
+                                    //String location = c.getString("location");
                                     String description = c.getString("description");
                                     String noise = c.getString("noise");
                                     String dispotion = c.getString("disposition");
@@ -302,7 +302,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     accuracys.add(accuracy);
                                     reloadTimes.add(reloadTime);
                                     magazineSizes.add(magazinesize);
-                                    locations.add(location);
+                                    //locations.add(location);
                                     descriptions.add(description);
                                     procChances.add(procChance);
                                     criticalChances.add(critChance);
@@ -350,7 +350,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String accuracy = c.getString("accuracy");
                                     String reloadTime = c.getString("reloadTime");
                                     String magazinesize = c.getString("magazineSize");
-                                    String location = c.getString("location");
+                                    //String location = c.getString("location");
                                     String description = c.getString("description");
                                     String noise = c.getString("noise");
                                     String dispotion = c.getString("disposition");
@@ -368,7 +368,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     accuracys.add(accuracy);
                                     reloadTimes.add(reloadTime);
                                     magazineSizes.add(magazinesize);
-                                    locations.add(location);
+                                    //locations.add(location);
                                     descriptions.add(description);
                                     procChances.add(procChance);
                                     criticalChances.add(critChance);
@@ -411,7 +411,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String name = c.getString("name");
                                     String dmg = c.getString("totalDamage");
                                     String mr = c.getString("masteryReq");
-                                    String location = c.getString("location");
+                                    //String location = c.getString("location");
                                     String description = c.getString("description");
                                     String slash = c.getString("slash");
                                     String dispotion = c.getString("disposition");
@@ -426,7 +426,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     names.add(name);
                                     dmgs.add(dmg);
                                     mrs.add(mr);
-                                    locations.add(location);
+                                    //locations.add(location);
                                     descriptions.add(description);
                                     procChances.add(procChance);
                                     criticalChances.add(critChance);
@@ -468,21 +468,19 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     JSONObject c = frames.getJSONObject(i);
                                     String name = c.getString("name");
                                     String health = c.getString("health");
-                                    String mr = c.getString("mr");
                                     String shield = c.getString("shield");
                                     String armor = c.getString("armor");
                                     String power = c.getString("power");
-                                    String location = c.getString("location");
+                                    //String location = c.getString("location");
                                     String description = c.getString("description");
                                     String image = c.getString("imageName");
 
                                     names.add(name);
                                     healts.add(health);
-                                    mrs.add(mr);
                                     shields.add(shield);
                                     armors.add(armor);
                                     powers.add(power);
-                                    locations.add(location);
+                                    //locations.add(location);
                                     descriptions.add(description);
                                     images.add(image);
                                     idcko = 5;
