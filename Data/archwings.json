@@ -10,6 +10,7 @@
 	"type": "Archwing",
 	"buildPrice": 7000,
 	"buildTime": 3600,
+	"location": "Quest",
 	"imageName": "odonata.png"
 }, {
 	 "name": "Odonata Prime",

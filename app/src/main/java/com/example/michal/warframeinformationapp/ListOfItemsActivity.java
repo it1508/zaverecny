@@ -32,6 +32,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
     String[] companios;
     String[] archwing;
     String mel = "";
+    int idcko = 0;
     //String frame[];
     ArrayList<String> names = new ArrayList<String>();
     ArrayList<String> shields = new ArrayList<String>();
@@ -185,7 +186,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String power = c.getString("power");
                                     String location = c.getString("location");
                                     String description = c.getString("description");
-                                    String image = c.getString("imageName");
+                                    //String image = c.getString("imageName");
 
                                     names.add(name);
                                     healts.add(health);
@@ -197,7 +198,8 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     powers.add(power);
                                     locations.add(location);
                                     descriptions.add(description);
-                                    images.add(image);
+                                    //images.add(image);
+                                    idcko = 0;
                                     //frame[i].concat(name) ;
                                 }
                             } catch (JSONException e) {
@@ -246,6 +248,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     locations.add(location);
                                     descriptions.add(description);
                                     images.add(image);
+                                    idcko = 1;
                                     //frame[i].concat(name) ;
                                 }
                             } catch (JSONException e) {
@@ -276,7 +279,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                 for(int i =0;i < frames.length();i++){
                                     JSONObject c = frames.getJSONObject(i);
                                     String name = c.getString("name");
-                                    String dmg = c.getString("health");
+                                    String dmg = c.getString("damage");
                                     String mr = c.getString("masteryReq");
                                     String accuracy = c.getString("accuracy");
                                     String reloadTime = c.getString("reloadTime");
@@ -310,7 +313,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     noises.add(noise);
                                     fireRates.add(fireRate);
                                     images.add(image);
-
+                                    idcko = 2;
 
 
                                 }
@@ -342,7 +345,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                 for(int i =0;i < frames.length();i++){
                                     JSONObject c = frames.getJSONObject(i);
                                     String name = c.getString("name");
-                                    String dmg = c.getString("health");
+                                    String dmg = c.getString("damage");
                                     String mr = c.getString("masteryReq");
                                     String accuracy = c.getString("accuracy");
                                     String reloadTime = c.getString("reloadTime");
@@ -376,6 +379,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     noises.add(noise);
                                     fireRates.add(fireRate);
                                     images.add(image);
+                                    idcko = 3;
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -405,7 +409,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                 for(int i =0;i < frames.length();i++){
                                     JSONObject c = frames.getJSONObject(i);
                                     String name = c.getString("name");
-                                    String dmg = c.getString("health");
+                                    String dmg = c.getString("totalDamage");
                                     String mr = c.getString("masteryReq");
                                     String location = c.getString("location");
                                     String description = c.getString("description");
@@ -433,6 +437,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     punctures.add(puncture);
                                     impacts.add(impact);
                                     images.add(image);
+                                    idcko = 4;
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -449,7 +454,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                             });
                         }
                         break;
-                    case 6:
+                    case 5:
                         String url5 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/companions.json";
                         String jsonStr5 = sh.makeServiceCall(url5);
 
@@ -480,6 +485,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     locations.add(location);
                                     descriptions.add(description);
                                     images.add(image);
+                                    idcko = 5;
                                     //frame[i].concat(name) ;
                                 }
                             } catch (JSONException e) {
@@ -513,8 +519,79 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                     Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
                     showDetailActivity.putExtra("com.example.michal.ITEM", position);
                     showDetailActivity.putExtra("com.example.michal.FRAME", names);
-                    showDetailActivity.putExtra("com.example.michal.FRAME", mrs);
+                    /*showDetailActivity.putExtra("com.example.michal.MRS", mrs);
+                    showDetailActivity.putExtra("com.example.michal.IMAGE", images);
+                    showDetailActivity.putExtra("com.example.michal.DESCRIPTION", descriptions);
+                    showDetailActivity.putExtra("com.example.michal.LOCATION", locations);*/
+                    /*switch(idcko){
+                        case 0:
+                            showDetailActivity.putExtra("com.example.michal.HEALT", healts);
+                            showDetailActivity.putExtra("com.example.michal.ARMOR", armors);
+                            showDetailActivity.putExtra("com.example.michal.SHIELD", shields);
+                            showDetailActivity.putExtra("com.example.michal.POWER", powers);
+                            showDetailActivity.putExtra("com.example.michal.POLARITIES", polarities);
+                            showDetailActivity.putExtra("com.example.michal.SPEED", speeds);
 
+                            break;
+                        case 1:
+                            showDetailActivity.putExtra("com.example.michal.HEALT", healts);
+                            showDetailActivity.putExtra("com.example.michal.ARMOR", armors);
+                            showDetailActivity.putExtra("com.example.michal.SHIELD", shields);
+                            showDetailActivity.putExtra("com.example.michal.POWER", powers);
+                            showDetailActivity.putExtra("com.example.michal.POLARITIES", polarities);
+                            showDetailActivity.putExtra("com.example.michal.SPEED", speeds);
+
+                            break;
+                        case 2:
+                            showDetailActivity.putExtra("com.example.michal.ACCURACY", accuracys);
+                            showDetailActivity.putExtra("com.example.michal.CRITCHANCE", criticalChances);
+                            showDetailActivity.putExtra("com.example.michal.CRITMULTIPLA", criticalMultipliers);
+                            showDetailActivity.putExtra("com.example.michal.AMMO", ammos);
+                            showDetailActivity.putExtra("com.example.michal.MAGAZINESIZE", magazineSizes);
+                            showDetailActivity.putExtra("com.example.michal.DMG", dmgs);
+                            showDetailActivity.putExtra("com.example.michal.FIRERATE", fireRates);
+                            showDetailActivity.putExtra("com.example.michal.DISPOTION", dispotions);
+                            showDetailActivity.putExtra("com.example.michal.RELOADTIME", reloadTimes);
+                            showDetailActivity.putExtra("com.example.michal.TYPE", types);
+                            showDetailActivity.putExtra("com.example.michal.NOISE", noises);
+                            showDetailActivity.putExtra("com.example.michal.PROCCHANCE", procChances);
+
+                            break;
+                        case 3:
+                            showDetailActivity.putExtra("com.example.michal.ACCURACY", accuracys);
+                            showDetailActivity.putExtra("com.example.michal.CRITCHANCE", criticalChances);
+                            showDetailActivity.putExtra("com.example.michal.CRITMULTIPLA", criticalMultipliers);
+                            showDetailActivity.putExtra("com.example.michal.AMMO", ammos);
+                            showDetailActivity.putExtra("com.example.michal.MAGAZINESIZE", magazineSizes);
+                            showDetailActivity.putExtra("com.example.michal.DMG", dmgs);
+                            showDetailActivity.putExtra("com.example.michal.FIRERATE", fireRates);
+                            showDetailActivity.putExtra("com.example.michal.DISPOTION", dispotions);
+                            showDetailActivity.putExtra("com.example.michal.RELOADTIME", reloadTimes);
+                            showDetailActivity.putExtra("com.example.michal.TYPE", types);
+                            showDetailActivity.putExtra("com.example.michal.NOISE", noises);
+                            showDetailActivity.putExtra("com.example.michal.PROCCHANCE", procChances);
+
+                            break;
+                        case 4:
+                            showDetailActivity.putExtra("com.example.michal.CRITCHANCE", criticalChances);
+                            showDetailActivity.putExtra("com.example.michal.CRITMULTIPLA", criticalMultipliers);
+                            showDetailActivity.putExtra("com.example.michal.DMG", dmgs);
+                            showDetailActivity.putExtra("com.example.michal.IMPACT", impacts);
+                            showDetailActivity.putExtra("com.example.michal.DISPOTION", dispotions);
+                            showDetailActivity.putExtra("com.example.michal.PUNCTURE", punctures);
+                            showDetailActivity.putExtra("com.example.michal.TYPE", types);
+                            showDetailActivity.putExtra("com.example.michal.SLASH", slashs);
+                            showDetailActivity.putExtra("com.example.michal.PROCCHANCE", procChances);
+
+                            break;
+                        case 5:
+                            showDetailActivity.putExtra("com.example.michal.HEALT", healts);
+                            showDetailActivity.putExtra("com.example.michal.ARMOR", armors);
+                            showDetailActivity.putExtra("com.example.michal.SHIELD", shields);
+                            showDetailActivity.putExtra("com.example.michal.POWER", powers);
+
+                            break;
+                    }*/
 
 
                     startActivity(showDetailActivity);
