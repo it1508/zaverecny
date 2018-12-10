@@ -20,7 +20,7 @@
 	"imageName": "acrid.png",
 	 "ammo": 210,
     "damage": "35.0 toxin",
-	"polarities": [  ],
+	"polarities": "",
 	"disposition": 5
 }, {
 	"name": "Afuris",
