@@ -33,7 +33,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
     String[] archwing;
     String mel = "";
     //String frame[];
-    ArrayList<String> frame = new ArrayList<String>();
+    ArrayList<String> names = new ArrayList<String>();
     ArrayList<String> shields = new ArrayList<String>();
     ArrayList<String> healts = new ArrayList<String>();
     ArrayList<String> mrs = new ArrayList<String>();
@@ -43,11 +43,28 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
     ArrayList<String> locations = new ArrayList<String>();
     ArrayList<String> powers = new ArrayList<String>();
     ArrayList<String> polarities = new ArrayList<String>();
-    String sec = "";
+    ArrayList<String> dispotions = new ArrayList<String>();
+    ArrayList<String> dmgs = new ArrayList<String>();
+    ArrayList<String> types = new ArrayList<String>();
+    ArrayList<String> noises = new ArrayList<String>();
+    ArrayList<String> accuracys = new ArrayList<String>();
+    ArrayList<String> criticalChances = new ArrayList<String>();
+    ArrayList<String> criticalMultipliers = new ArrayList<String>();
+    ArrayList<String> procChances = new ArrayList<String>();
+    ArrayList<String> fireRates = new ArrayList<String>();
+    ArrayList<String> ammos = new ArrayList<String>();
+    ArrayList<String> magazineSizes = new ArrayList<String>();
+    ArrayList<String> reloadTimes = new ArrayList<String>();
+    ArrayList<String> impacts = new ArrayList<String>();
+    ArrayList<String> slashs = new ArrayList<String>();
+    ArrayList<String> punctures = new ArrayList<String>();
+    ArrayList<String> images = new ArrayList<String>();
+
+    /*String sec = "";
     String prim = "";
     String comp = "";
     String arch = "";
-    String parse = "";
+    String parse = "";*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,21 +181,23 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String shield = c.getString("shield");
                                     String speed = c.getString("speed");
                                     String armor = c.getString("armor");
-                                    String polarities = c.getString("polarities");
+                                    String polaritie = c.getString("polarities");
                                     String power = c.getString("power");
                                     String location = c.getString("location");
                                     String description = c.getString("description");
+                                    String image = c.getString("imageName");
 
-                                    frame.add(name);
+                                    names.add(name);
                                     healts.add(health);
                                     mrs.add(mr);
                                     shields.add(shield);
                                     speeds.add(speed);
                                     armors.add(armor);
-                                    polarities.add(polarities);
+                                    polarities.add(polaritie);
                                     powers.add(power);
                                     locations.add(location);
                                     descriptions.add(description);
+                                    images.add(image);
                                     //frame[i].concat(name) ;
                                 }
                             } catch (JSONException e) {
@@ -197,7 +216,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                         }
                         break;
                     case 1:
-                        String url1 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/warframes.json";
+                        String url1 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/archwings.json";
                         String jsonStr1 = sh.makeServiceCall(url1);
 
                         Log.e(TAG, "Response from url: " + jsonStr1);
@@ -211,7 +230,22 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String name = c.getString("name");
                                     String health = c.getString("health");
                                     String mr = c.getString("mr");
-                                    frame.add(name);
+                                    String shield = c.getString("shield");
+                                    String armor = c.getString("armor");
+                                    String power = c.getString("power");
+                                    String location = c.getString("location");
+                                    String description = c.getString("description");
+                                    String image = c.getString("imageName");
+
+                                    names.add(name);
+                                    healts.add(health);
+                                    mrs.add(mr);
+                                    shields.add(shield);
+                                    armors.add(armor);
+                                    powers.add(power);
+                                    locations.add(location);
+                                    descriptions.add(description);
+                                    images.add(image);
                                     //frame[i].concat(name) ;
                                 }
                             } catch (JSONException e) {
@@ -230,7 +264,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                         }
                         break;
                     case 2:
-                        String url2 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/warframes.json";
+                        String url2 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/primary.json";
                         String jsonStr2 = sh.makeServiceCall(url2);
 
                         Log.e(TAG, "Response from url: " + jsonStr2);
@@ -242,8 +276,40 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                 for(int i =0;i < frames.length();i++){
                                     JSONObject c = frames.getJSONObject(i);
                                     String name = c.getString("name");
-                                    String health = c.getString("health");
-                                    String mr = c.getString("mr");
+                                    String dmg = c.getString("health");
+                                    String mr = c.getString("masteryReq");
+                                    String accuracy = c.getString("accuracy");
+                                    String reloadTime = c.getString("reloadTime");
+                                    String magazinesize = c.getString("magazineSize");
+                                    String location = c.getString("location");
+                                    String description = c.getString("description");
+                                    String noise = c.getString("noise");
+                                    String dispotion = c.getString("disposition");
+                                    String fireRate = c.getString("fireRate");
+                                    String ammo = c.getString("ammo");
+                                    String procChance = c.getString("procChance");
+                                    String critChance = c.getString("criticalChance");
+                                    String critMultipla = c.getString("criticalMultiplier");
+                                    String type = c.getString("type");
+                                    String image = c.getString("imageName");
+
+                                    names.add(name);
+                                    dmgs.add(dmg);
+                                    mrs.add(mr);
+                                    accuracys.add(accuracy);
+                                    reloadTimes.add(reloadTime);
+                                    magazineSizes.add(magazinesize);
+                                    locations.add(location);
+                                    descriptions.add(description);
+                                    procChances.add(procChance);
+                                    criticalChances.add(critChance);
+                                    criticalMultipliers.add(critMultipla);
+                                    ammos.add(ammo);
+                                    dispotions.add(dispotion);
+                                    types.add(type);
+                                    noises.add(noise);
+                                    fireRates.add(fireRate);
+                                    images.add(image);
 
 
 
@@ -264,7 +330,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                         }
                         break;
                     case 3:
-                        String url3 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/warframes.json";
+                        String url3 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/secondary.json";
                         String jsonStr3 = sh.makeServiceCall(url3);
 
                         Log.e(TAG, "Response from url: " + jsonStr3);
@@ -276,10 +342,40 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                 for(int i =0;i < frames.length();i++){
                                     JSONObject c = frames.getJSONObject(i);
                                     String name = c.getString("name");
-                                    String health = c.getString("health");
-                                    String mr = c.getString("mr");
-                                    frame.add(name);
-                                    //frame[i].concat(name) ;
+                                    String dmg = c.getString("health");
+                                    String mr = c.getString("masteryReq");
+                                    String accuracy = c.getString("accuracy");
+                                    String reloadTime = c.getString("reloadTime");
+                                    String magazinesize = c.getString("magazineSize");
+                                    String location = c.getString("location");
+                                    String description = c.getString("description");
+                                    String noise = c.getString("noise");
+                                    String dispotion = c.getString("disposition");
+                                    String fireRate = c.getString("fireRate");
+                                    String ammo = c.getString("ammo");
+                                    String procChance = c.getString("procChance");
+                                    String critChance = c.getString("criticalChance");
+                                    String critMultipla = c.getString("criticalMultiplier");
+                                    String type = c.getString("type");
+                                    String image = c.getString("imageName");
+
+                                    names.add(name);
+                                    dmgs.add(dmg);
+                                    mrs.add(mr);
+                                    accuracys.add(accuracy);
+                                    reloadTimes.add(reloadTime);
+                                    magazineSizes.add(magazinesize);
+                                    locations.add(location);
+                                    descriptions.add(description);
+                                    procChances.add(procChance);
+                                    criticalChances.add(critChance);
+                                    criticalMultipliers.add(critMultipla);
+                                    ammos.add(ammo);
+                                    dispotions.add(dispotion);
+                                    types.add(type);
+                                    noises.add(noise);
+                                    fireRates.add(fireRate);
+                                    images.add(image);
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -297,7 +393,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                         }
                         break;
                     case 4:
-                        String url4 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/warframes.json";
+                        String url4 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/melee.json";
                         String jsonStr4 = sh.makeServiceCall(url4);
 
                         Log.e(TAG, "Response from url: " + jsonStr4);
@@ -309,10 +405,34 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                 for(int i =0;i < frames.length();i++){
                                     JSONObject c = frames.getJSONObject(i);
                                     String name = c.getString("name");
-                                    String health = c.getString("health");
-                                    String mr = c.getString("mr");
-                                    frame.add(name);
-                                    //frame[i].concat(name) ;
+                                    String dmg = c.getString("health");
+                                    String mr = c.getString("masteryReq");
+                                    String location = c.getString("location");
+                                    String description = c.getString("description");
+                                    String slash = c.getString("slash");
+                                    String dispotion = c.getString("disposition");
+                                    String puncture = c.getString("puncture");
+                                    String impact = c.getString("impact");
+                                    String procChance = c.getString("procChance");
+                                    String critChance = c.getString("criticalChance");
+                                    String critMultipla = c.getString("criticalMultiplier");
+                                    String type = c.getString("type");
+                                    String image = c.getString("imageName");
+
+                                    names.add(name);
+                                    dmgs.add(dmg);
+                                    mrs.add(mr);
+                                    locations.add(location);
+                                    descriptions.add(description);
+                                    procChances.add(procChance);
+                                    criticalChances.add(critChance);
+                                    criticalMultipliers.add(critMultipla);
+                                    slashs.add(slash);
+                                    dispotions.add(dispotion);
+                                    types.add(type);
+                                    punctures.add(puncture);
+                                    impacts.add(impact);
+                                    images.add(image);
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -330,7 +450,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                         }
                         break;
                     case 6:
-                        String url5 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/warframes.json";
+                        String url5 = "https://raw.githubusercontent.com/it1508/zaverecny/master/Data/companions.json";
                         String jsonStr5 = sh.makeServiceCall(url5);
 
                         Log.e(TAG, "Response from url: " + jsonStr5);
@@ -344,7 +464,22 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String name = c.getString("name");
                                     String health = c.getString("health");
                                     String mr = c.getString("mr");
-                                    frame.add(name);
+                                    String shield = c.getString("shield");
+                                    String armor = c.getString("armor");
+                                    String power = c.getString("power");
+                                    String location = c.getString("location");
+                                    String description = c.getString("description");
+                                    String image = c.getString("imageName");
+
+                                    names.add(name);
+                                    healts.add(health);
+                                    mrs.add(mr);
+                                    shields.add(shield);
+                                    armors.add(armor);
+                                    powers.add(power);
+                                    locations.add(location);
+                                    descriptions.add(description);
+                                    images.add(image);
                                     //frame[i].concat(name) ;
                                 }
                             } catch (JSONException e) {
@@ -376,8 +511,12 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
-                    showDetailActivity.putExtra("com.example.michal.FRAME", frame);
                     showDetailActivity.putExtra("com.example.michal.ITEM", position);
+                    showDetailActivity.putExtra("com.example.michal.FRAME", names);
+                    showDetailActivity.putExtra("com.example.michal.FRAME", mrs);
+
+
+
                     startActivity(showDetailActivity);
                     //DetailActivity.data.setText(parse);
                 }
