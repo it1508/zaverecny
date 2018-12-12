@@ -16,22 +16,35 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class DetailActivity extends AppCompatActivity /*implements TaskCompleted*/{
-
+    int idcko = 0;
     //ListView secondListView;
-    String[] warframes;
-    String[] prices;
-    String[] descriptions;
     public static TextView data;
-    String mr1[];
-    String location1[];
-    String hp1[];
-    String shield1[];
-    String armor1[];
-    String description1[];
-    String speed1[];
-    String power1[];
-    String polarities1[];
-    ArrayList<String> name = new ArrayList<String>();
+    ArrayList<String> names = new ArrayList<String>();
+    ArrayList<String> shields = new ArrayList<String>();
+    ArrayList<String> healts = new ArrayList<String>();
+    ArrayList<String> mrs = new ArrayList<String>();
+    ArrayList<String> speeds = new ArrayList<String>();
+    ArrayList<String> armors = new ArrayList<String>();
+    ArrayList<String> descriptions = new ArrayList<String>();
+    ArrayList<String> locations = new ArrayList<String>();
+    ArrayList<String> powers = new ArrayList<String>();
+    ArrayList<String> polarities = new ArrayList<String>();
+    ArrayList<String> dispotions = new ArrayList<String>();
+    ArrayList<String> dmgs = new ArrayList<String>();
+    ArrayList<String> types = new ArrayList<String>();
+    ArrayList<String> noises = new ArrayList<String>();
+    ArrayList<String> accuracys = new ArrayList<String>();
+    ArrayList<String> criticalChances = new ArrayList<String>();
+    ArrayList<String> criticalMultipliers = new ArrayList<String>();
+    ArrayList<String> procChances = new ArrayList<String>();
+    ArrayList<String> fireRates = new ArrayList<String>();
+    ArrayList<String> ammos = new ArrayList<String>();
+    ArrayList<String> magazineSizes = new ArrayList<String>();
+    ArrayList<String> reloadTimes = new ArrayList<String>();
+    ArrayList<String> impacts = new ArrayList<String>();
+    ArrayList<String> slashs = new ArrayList<String>();
+    ArrayList<String> punctures = new ArrayList<String>();
+    ArrayList<String> images = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,18 +66,61 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         }*/
         Intent in = getIntent();
         int index = in.getIntExtra("com.example.michal.ITEM",-1);
-        name = in.getStringArrayListExtra("com.example.michal.FRAME");
-        /*mr1 = in.getStringArrayExtra("com.example.michal.MR");
-        hp1 = in.getStringArrayExtra("com.example.michal.HP");
-        shield1 = in.getStringArrayExtra("com.example.michal.SHIELD");
-        armor1 = in.getStringArrayExtra("com.example.michal.ARMOR");
-        polarities1 = in.getStringArrayExtra("com.example.michal.POLARITIES");
-        description1 = in.getStringArrayExtra("com.example.michal.DESCRIPTION");
-        speed1 = in.getStringArrayExtra("com.example.michal.SPEED");
-        power1 = in.getStringArrayExtra("com.example.michal.POWER");*/
-
+        idcko = in.getIntExtra("com.example.michal.ID",-1);
+        names = in.getStringArrayListExtra("com.example.michal.FRAME");
+        mrs = in.getStringArrayListExtra("com.example.michal.MRS");
+        images = in.getStringArrayListExtra("com.example.michal.IMAGE");
+        descriptions = in.getStringArrayListExtra("com.example.michal.DESCRIPTION");
+        locations = in.getStringArrayListExtra("com.example.michal.LOCATION");
+        healts = in.getStringArrayListExtra("com.example.michal.HEALT");
+        armors = in.getStringArrayListExtra("com.example.michal.ARMOR");
+        powers = in.getStringArrayListExtra("com.example.michal.POWER");
+        polarities = in.getStringArrayListExtra("com.example.michal.POLARITIES");
+        speeds = in.getStringArrayListExtra("com.example.michal.SPEED");
+        accuracys = in.getStringArrayListExtra("com.example.michal.ACCURACY");
+        criticalChances = in.getStringArrayListExtra("com.example.michal.CRITCHANCE");
+        criticalMultipliers = in.getStringArrayListExtra("com.example.michal.CRITMULTIPLA");
+        ammos = in.getStringArrayListExtra("com.example.michal.AMMO");
+        magazineSizes = in.getStringArrayListExtra("com.example.michal.MAGAZINESIZE");
+        dmgs = in.getStringArrayListExtra("com.example.michal.DMG");
+        fireRates = in.getStringArrayListExtra("com.example.michal.FIRERATE");
+        dispotions = in.getStringArrayListExtra("com.example.michal.DISPOTION");
+        reloadTimes = in.getStringArrayListExtra("com.example.michal.RELOADTIME");
+        types = in.getStringArrayListExtra("com.example.michal.TYPE");
+        noises = in.getStringArrayListExtra("com.example.michal.NOISE");
+        procChances = in.getStringArrayListExtra("com.example.michal.PROCCHANCE");
+        slashs = in.getStringArrayListExtra("com.example.michal.SLASH");
+        impacts = in.getStringArrayListExtra("com.example.michal.IMPACT");
+        punctures = in.getStringArrayListExtra("com.example.michal.PUNCTURE");
         data = (TextView) findViewById(R.id.priceTextView);
-        data.setText(name.get(index));
+        switch(idcko){
+            case 0:
+                data.setText("Name: " + names.get(index) + "\nMR: " + mrs.get(index) );
+                setTitle(names.get(index));
+                break;
+            case 1:
+                data.setText("Name: " + names.get(index) + "\ncritMulti: " + armors.get(index) );
+                setTitle(names.get(index));
+                break;
+            case 2:
+                data.setText("Name: " + names.get(index) + "\nAmmo: " + ammos.get(index) );
+                setTitle(names.get(index));
+                break;
+            case 3:
+                data.setText("Name: " + names.get(index) + "\nProcChance: " + procChances.get(index) );
+                setTitle(names.get(index));
+                break;
+            case 4:
+                data.setText("Name: " + names.get(index) + "\nSlash: " + slashs.get(index) );
+                setTitle(names.get(index));
+                break;
+            case 5:
+                data.setText("Name: " + names.get(index) + "\nHealts: " + healts.get(index) );
+                setTitle(names.get(index));
+                break;
+        }
+
+        //data.setText("Name: " + names.get(index) + "\nMR: " + mrs.get(index) );
 
         /*int index = in.getIntExtra("com.example.michal.ITEM", -1);
         if(index > -1){

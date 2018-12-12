@@ -111,36 +111,42 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                     //warframe.execute();
                     //parse = frame + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, warframes));
+                    setTitle("Warframes");
                     break;
                 case 1:
                     //JSONFrameparsing archwings = new JSONFrameparsing();
                     //archwings.execute();
                     //parse = arch + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, archwing));
+                    setTitle("Archwings");
                     break;
                 case 2:
                     //JSONFrameparsing melees = new JSONFrameparsing();
                     //primarys.execute();
                     //parse = prim + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, primary));
+                    setTitle("Primary");
                     break;
                 case 3:
                     //JSONFrameparsing secondarys = new JSONFrameparsing();
                     //secondarys.execute();
                     //parse = sec + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, secondary));
+                    setTitle("Secondary");
                     break;
                 case 4:
                     //JSONFrameparsing primarys = new JSONFrameparsing();
                     //melees.execute();
                     //parse = mel + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, melee));
+                    setTitle("Melee");
                     break;
                 case 5:
                     //JSONFrameparsing companioss = new JSONFrameparsing();
                     //companioss.execute();
                     //parse = comp + "\n";
                     itemsListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, companios));
+                    setTitle("Companions");
                     break;
                 default:
                     break;
@@ -517,12 +523,13 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                     Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
                     showDetailActivity.putExtra("com.example.michal.ITEM", position);
                     showDetailActivity.putExtra("com.example.michal.FRAME", names);
-                    /*showDetailActivity.putExtra("com.example.michal.MRS", mrs);
+                    showDetailActivity.putExtra("com.example.michal.MRS", mrs);
                     showDetailActivity.putExtra("com.example.michal.IMAGE", images);
                     showDetailActivity.putExtra("com.example.michal.DESCRIPTION", descriptions);
-                    showDetailActivity.putExtra("com.example.michal.LOCATION", locations);*/
-                    /*switch(idcko){
+                    showDetailActivity.putExtra("com.example.michal.LOCATION", locations);
+                    switch(idcko){
                         case 0:
+                            showDetailActivity.putExtra("com.example.michal.ID", idcko);
                             showDetailActivity.putExtra("com.example.michal.HEALT", healts);
                             showDetailActivity.putExtra("com.example.michal.ARMOR", armors);
                             showDetailActivity.putExtra("com.example.michal.SHIELD", shields);
@@ -538,7 +545,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                             showDetailActivity.putExtra("com.example.michal.POWER", powers);
                             showDetailActivity.putExtra("com.example.michal.POLARITIES", polarities);
                             showDetailActivity.putExtra("com.example.michal.SPEED", speeds);
-
+                            showDetailActivity.putExtra("com.example.michal.ID", idcko);
                             break;
                         case 2:
                             showDetailActivity.putExtra("com.example.michal.ACCURACY", accuracys);
@@ -553,7 +560,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                             showDetailActivity.putExtra("com.example.michal.TYPE", types);
                             showDetailActivity.putExtra("com.example.michal.NOISE", noises);
                             showDetailActivity.putExtra("com.example.michal.PROCCHANCE", procChances);
-
+                            showDetailActivity.putExtra("com.example.michal.ID", idcko);
                             break;
                         case 3:
                             showDetailActivity.putExtra("com.example.michal.ACCURACY", accuracys);
@@ -568,7 +575,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                             showDetailActivity.putExtra("com.example.michal.TYPE", types);
                             showDetailActivity.putExtra("com.example.michal.NOISE", noises);
                             showDetailActivity.putExtra("com.example.michal.PROCCHANCE", procChances);
-
+                            showDetailActivity.putExtra("com.example.michal.ID", idcko);
                             break;
                         case 4:
                             showDetailActivity.putExtra("com.example.michal.CRITCHANCE", criticalChances);
@@ -580,16 +587,16 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                             showDetailActivity.putExtra("com.example.michal.TYPE", types);
                             showDetailActivity.putExtra("com.example.michal.SLASH", slashs);
                             showDetailActivity.putExtra("com.example.michal.PROCCHANCE", procChances);
-
+                            showDetailActivity.putExtra("com.example.michal.ID", idcko);
                             break;
                         case 5:
                             showDetailActivity.putExtra("com.example.michal.HEALT", healts);
                             showDetailActivity.putExtra("com.example.michal.ARMOR", armors);
                             showDetailActivity.putExtra("com.example.michal.SHIELD", shields);
                             showDetailActivity.putExtra("com.example.michal.POWER", powers);
-
+                            showDetailActivity.putExtra("com.example.michal.ID", idcko);
                             break;
-                    }*/
+                    }
 
 
                     startActivity(showDetailActivity);

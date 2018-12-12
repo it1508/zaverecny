@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".DetailActivity"
-            android:label="Get name"
+            android:label=""
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ListOfItemsActivity"
