@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -93,10 +94,13 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         impacts = in.getStringArrayListExtra("com.example.michal.IMPACT");
         punctures = in.getStringArrayListExtra("com.example.michal.PUNCTURE");
         data = (TextView) findViewById(R.id.priceTextView);
+        ImageView img = (ImageView) findViewById(R.id.ItemImageView);
         switch(idcko){
             case 0:
                 data.setText("Name: " + names.get(index) + "\nMR: " + mrs.get(index) );
                 setTitle(names.get(index));
+                //scaleImg(img,pic);
+                //img.setImageDrawable();
                 break;
             case 1:
                 data.setText("Name: " + names.get(index) + "\ncritMulti: " + armors.get(index) );
@@ -133,11 +137,11 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
             String price = prices[index];
             nameTextView.setText(name);
             priceTextView.setText(price);
-        }
+        }*/
 
     }
-    private int getImg(int index){
-        switch (index){
+    /*private int getImg(char jmeno){
+        switch (jmeno){
             case 0: return R.drawable.excaliburprime;
             case 1: return R.drawable.nova;
             case 2: return R.drawable.hydroid;
@@ -161,8 +165,8 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
 
         options.inJustDecodeBounds = false;
         Bitmap scaleImg = BitmapFactory.decodeResource(getResources(),pic,options);
-        img.setImageBitmap(scaleImg);*/
-    }
+        img.setImageBitmap(scaleImg);
+    }*/
 
     /*@Override
     public void onTaskComplete(String[] name, String[] mr, String[] health, String[] shield, String[] armor, String[] power, String[] speed, String[] description, String[] polarities) {
