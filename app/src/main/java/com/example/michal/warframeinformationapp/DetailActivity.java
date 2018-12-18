@@ -97,7 +97,8 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         ImageView img = (ImageView) findViewById(R.id.ItemImageView);
         switch(idcko){
             case 0:
-                data.setText("Name: " + names.get(index) + "\nMR: " + mrs.get(index) );
+                data.setText("Description: "+ descriptions.get(index) +"\nName: " + names.get(index) + "\nMR: " + mrs.get(index) );
+                data.setText("Description: "+ descriptions.get(index) +"\nName: " + names.get(index) + "\nMR: " + mrs.get(index) );
                 setTitle(names.get(index));
                 //scaleImg(img,pic);
                 //img.setImageDrawable();
