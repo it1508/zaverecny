@@ -53,4 +53,26 @@
 	"power": "175/262.5",
 	"polarities": "1x naramon, 2x madurai",
 	"location": "Axi C3, (Lith B5, Neo K2, Neo S7), Meso B2, Neo B"
+}, {
+	"name": "Chroma",
+	"description": "This is Chroma, an ancient legend, master of the elements.\nWhen all the land is in ruins, Tenno, only Chroma will remain.\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "100/300",
+	"armor": "350",
+	"speed": "1",
+	"power": "150/225",
+	"polarities": "1x naramon, 1x madurai",
+	"location": "Junction Completion"
+}, {
+	"name": "Ember",
+	"description": "This is Ember, destructive and deadly.\nEmber's presence on the battlefield is devastating. Mind the heat, Tenno.\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "100/300",
+	"armor": "100",
+	"speed": "1.1",
+	"power": "150/225",
+	"polarities": "2x naramon",
+	"location": "General Sargas Ruk - Tethys, Saturn"
 }]
