@@ -73,10 +73,10 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
         setContentView(R.layout.activity_list_of_items);
 
         contactList = new ArrayList<>();
-        itemsListView = (ListView) findViewById(R.id.itemsListView);
+        //itemsListView = (ListView) findViewById(R.id.itemsListView);
         new GetContacts().execute();
         Resources res = getResources();
-        itemsListView = (ListView) findViewById(R.id.itemsListView);
+        itemsListView = findViewById(R.id.itemsListView);
         warframes = res.getStringArray(R.array.warframes);
         melee = res.getStringArray(R.array.melee);
         secondary = res.getStringArray(R.array.secondary);
