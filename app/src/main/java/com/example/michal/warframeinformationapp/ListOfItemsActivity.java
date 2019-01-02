@@ -428,6 +428,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     String critMultipla = c.getString("criticalMultiplier");
                                     String type = c.getString("type");
                                     String image = c.getString("imageName");
+                                    String fireRate = c.getString("fireRate");
 
                                     names.add(name);
                                     dmgs.add(dmg);
@@ -443,6 +444,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                                     punctures.add(puncture);
                                     impacts.add(impact);
                                     images.add(image);
+                                    fireRates.add(fireRate);
                                     idcko = 4;
                                 }
                             } catch (JSONException e) {
@@ -588,6 +590,7 @@ public class ListOfItemsActivity extends AppCompatActivity /*implements TaskComp
                             showDetailActivity.putExtra("com.example.michal.SLASH", slashs);
                             showDetailActivity.putExtra("com.example.michal.PROCCHANCE", procChances);
                             showDetailActivity.putExtra("com.example.michal.ID", idcko);
+                            showDetailActivity.putExtra("com.example.michal.FIRERATE", fireRates);
                             break;
                         case 5:
                             showDetailActivity.putExtra("com.example.michal.HEALT", healts);

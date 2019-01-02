@@ -3,6 +3,11 @@
     android:id="@+id/frameNameTextView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textSize="24sp">
+    android:padding="2dp"
+    android:textColor="@android:color/background_light"
+    android:textColorLink="@android:color/background_dark"
+    android:textSize="24sp"
+    android:textStyle="normal|bold|italic">
+
 
 </TextView>

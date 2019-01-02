@@ -25,6 +25,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Fetched text here!!!"
+            android:padding ="10dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/atributesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fetched text here!!!"
             android:padding="10dp"
             android:textSize="24sp" />
 

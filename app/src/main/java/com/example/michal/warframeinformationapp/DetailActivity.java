@@ -20,6 +20,7 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
     int idcko = 0;
     //ListView secondListView;
     public static TextView data;
+    public static TextView desc;
     ArrayList<String> names = new ArrayList<String>();
     ArrayList<String> shields = new ArrayList<String>();
     ArrayList<String> healts = new ArrayList<String>();
@@ -69,6 +70,7 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         int index = in.getIntExtra("com.example.michal.ITEM",-1);
         idcko = in.getIntExtra("com.example.michal.ID",-1);
         names = in.getStringArrayListExtra("com.example.michal.FRAME");
+        shields = in.getStringArrayListExtra("com.example.michal.SHIELD");
         mrs = in.getStringArrayListExtra("com.example.michal.MRS");
         images = in.getStringArrayListExtra("com.example.michal.IMAGE");
         descriptions = in.getStringArrayListExtra("com.example.michal.DESCRIPTION");
@@ -94,34 +96,104 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         impacts = in.getStringArrayListExtra("com.example.michal.IMPACT");
         punctures = in.getStringArrayListExtra("com.example.michal.PUNCTURE");
         data = (TextView) findViewById(R.id.priceTextView);
+        desc = (TextView) findViewById(R.id.atributesTextView);
         ImageView img = (ImageView) findViewById(R.id.ItemImageView);
+        int pic = 0;
         switch(idcko){
             case 0:
-                data.setText("Description: "+ descriptions.get(index) +"\nName: " + names.get(index) + "\nMR: " + mrs.get(index) );
-                data.setText("Description: "+ descriptions.get(index) +"\nName: " + names.get(index) + "\nMR: " + mrs.get(index) );
+                data.setText("Description: "+ descriptions.get(index) );
+                desc.setText("Name: " + names.get(index)
+                        + "\nMR: " + mrs.get(index)
+                        + "\nHP: " + healts.get(index)
+                        + "\nShield: " + shields.get(index)
+                        + "\nArmor: " + armors.get(index)
+                        + "\nPower: " + powers.get(index)
+                        + "\nSpeed: " + speeds.get(index)
+                        + "\nLocation: " + locations.get(index));
                 setTitle(names.get(index));
-                //scaleImg(img,pic);
-                //img.setImageDrawable();
+                pic = getImg(index);
+                scaleImg(img,pic);
                 break;
             case 1:
-                data.setText("Name: " + names.get(index) + "\ncritMulti: " + armors.get(index) );
+                data.setText("Description: "+ descriptions.get(index) );
+                desc.setText("Name: " + names.get(index)
+                        + "\nMR: " + mrs.get(index)
+                        + "\nHP: " + healts.get(index)
+                        + "\nShield: " + shields.get(index)
+                        + "\nArmor: " + armors.get(index)
+                        + "\nPower: " + powers.get(index));
                 setTitle(names.get(index));
+                pic = getImg(index);
+                scaleImg(img,pic);
                 break;
             case 2:
-                data.setText("Name: " + names.get(index) + "\nAmmo: " + ammos.get(index) );
+                data.setText("Description: "+ descriptions.get(index) );
+                desc.setText("Name: " + names.get(index)
+                        + "\nMR: " + mrs.get(index)
+                        + "\nCrittical Chance: " + criticalChances.get(index)
+                        + "\nCritical Multiplayer: " + criticalMultipliers.get(index)
+                        + "\nReload speed: " + reloadTimes.get(index)
+                        + "\nMagazine: " + magazineSizes.get(index)
+                        + "\nAmmo: " + ammos.get(index)
+                        + "\nFire rate: " + fireRates.get(index)
+                        + "\nAccucary: " + accuracys.get(index)
+                        + "\nProc. chance: " + procChances.get(index)
+                        + "\nNoise: " + noises.get(index)
+                        + "\nDamage: " + dmgs.get(index)
+                        + "\nDisposition: " + dispotions.get(index)
+                        + "\nType: " + types.get(index)
+                );
                 setTitle(names.get(index));
+                pic = getImg(index);
+                scaleImg(img,pic);
                 break;
             case 3:
-                data.setText("Name: " + names.get(index) + "\nProcChance: " + procChances.get(index) );
+                data.setText("Description: "+ descriptions.get(index) );
+                desc.setText("Name: " + names.get(index)
+                        + "\nMR: " + mrs.get(index)
+                        + "\nCrittical Chance: " + criticalChances.get(index)
+                        + "\nCritical Multiplayer: " + criticalMultipliers.get(index)
+                        + "\nReload speed: " + reloadTimes.get(index)
+                        + "\nMagazine: " + magazineSizes.get(index)
+                        + "\nAmmo: " + ammos.get(index)
+                        + "\nFire rate: " + fireRates.get(index)
+                        + "\nAccucary: " + accuracys.get(index)
+                        + "\nProc. chance: " + procChances.get(index)
+                        + "\nNoise: " + noises.get(index)
+                        + "\nDamage: " + dmgs.get(index)
+                        + "\nDisposition: " + dispotions.get(index)
+                        + "\nType: " + types.get(index)
+                );
                 setTitle(names.get(index));
+                pic = getImg(index);
+                scaleImg(img,pic);
                 break;
             case 4:
-                data.setText("Name: " + names.get(index) + "\nSlash: " + slashs.get(index) );
+                data.setText("Description: "+ descriptions.get(index) );
+                desc.setText("Name: " + names.get(index)
+                        + "\nMR: " + mrs.get(index)
+                        + "\nCrittical Chance: " + criticalChances.get(index)
+                        + "\nCritical Multiplayer: " + criticalMultipliers.get(index)
+                        + "\nSpeed: " + fireRates.get(index)
+                        + "\nProc. chance: " + procChances.get(index)
+                        + "\nDamage: " + dmgs.get(index)
+                        + "\nDisposition: " + dispotions.get(index)
+                );
                 setTitle(names.get(index));
+                pic = getImg(index);
+                scaleImg(img,pic);
                 break;
             case 5:
-                data.setText("Name: " + names.get(index) + "\nHealts: " + healts.get(index) );
+                data.setText("Description: "+ descriptions.get(index) );
+                desc.setText("Name: " + names.get(index)
+                        + "\nHP: " + healts.get(index)
+                        + "\nShield: " + shields.get(index)
+                        + "\nArmor: " + armors.get(index)
+                        + "\nPower: " + powers.get(index));
+
                 setTitle(names.get(index));
+                pic = getImg(index);
+                scaleImg(img,pic);
                 break;
         }
 
@@ -141,12 +213,117 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         }*/
 
     }
-    /*private int getImg(char jmeno){
-        switch (jmeno){
-            case 0: return R.drawable.excaliburprime;
-            case 1: return R.drawable.nova;
-            case 2: return R.drawable.hydroid;
-            default: return -1;
+    private int getImg(int jmeno){
+        switch(idcko) {
+            case 0: {
+                switch (jmeno) {
+                    case 0:
+                        return R.drawable.ash_prime;
+                    case 1:
+                        return R.drawable.ash_prime;
+                    case 2:
+                        return R.drawable.afuris;
+                    case 3:
+                        return R.drawable.ankyros_prime;
+                    case 4:
+                        return R.drawable.afuris;
+                    case 5:
+                        return R.drawable.afuris;
+                    default:
+                        return -1;
+                }
+            }
+            case 1: {
+                switch (jmeno) {
+                    case 0:
+                        return R.drawable.acrid;
+                    case 1:
+                        return R.drawable.adarza_kavat;
+                    case 2:
+                        return R.drawable.afuris;
+                    case 3:
+                        return R.drawable.ankyros_prime;
+                    case 4:
+                        return R.drawable.afuris;
+                    case 5:
+                        return R.drawable.afuris;
+                    default:
+                        return -1;
+                }
+            }
+            case 2: {
+                switch (jmeno) {
+                    case 0:
+                        return R.drawable.amprex;
+                    case 1:
+                        return R.drawable.astilla;
+                    case 2:
+                        return R.drawable.arca_plasmor;
+                    case 3:
+                        return R.drawable.attica;
+                    case 4:
+                        return R.drawable.afuris;
+                    case 5:
+                        return R.drawable.afuris;
+                    default:
+                        return -1;
+                }
+            }
+            case 3: {
+                switch (jmeno) {
+                    case 0:
+                        return R.drawable.acrid;
+                    case 1:
+                        return R.drawable.akbronco;
+                    case 2:
+                        return R.drawable.afuris;
+                    case 3:
+                        return R.drawable.ankyros_prime;
+                    case 4:
+                        return R.drawable.afuris;
+                    case 5:
+                        return R.drawable.afuris;
+                    default:
+                        return -1;
+                }
+            }
+            case 4: {
+                switch (jmeno) {
+                    case 0:
+                        return R.drawable.acrid;
+                    case 1:
+                        return R.drawable.adarza_kavat;
+                    case 2:
+                        return R.drawable.afuris;
+                    case 3:
+                        return R.drawable.ankyros_prime;
+                    case 4:
+                        return R.drawable.afuris;
+                    case 5:
+                        return R.drawable.afuris;
+                    default:
+                        return -1;
+                }
+            }
+            case 5: {
+                switch (jmeno) {
+                    case 0:
+                        return R.drawable.acrid;
+                    case 1:
+                        return R.drawable.adarza_kavat;
+                    case 2:
+                        return R.drawable.afuris;
+                    case 3:
+                        return R.drawable.ankyros_prime;
+                    case 4:
+                        return R.drawable.afuris;
+                    case 5:
+                        return R.drawable.afuris;
+                    default:
+                        return -1;
+                }
+            }
+            default:return 0;
         }
     }
 
@@ -167,7 +344,7 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         options.inJustDecodeBounds = false;
         Bitmap scaleImg = BitmapFactory.decodeResource(getResources(),pic,options);
         img.setImageBitmap(scaleImg);
-    }*/
+    }
 
     /*@Override
     public void onTaskComplete(String[] name, String[] mr, String[] health, String[] shield, String[] armor, String[] power, String[] speed, String[] description, String[] polarities) {
