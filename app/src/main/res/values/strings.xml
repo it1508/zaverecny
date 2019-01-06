@@ -11,12 +11,21 @@
     </string-array>
 
     <string-array name="warframes">
-        <item>Excalibur</item>
+        <item>Atlas</item>
+        <item>Ash</item>
+        <item>Ash prime</item>
+        <item>Banshee</item>
+        <item>Banshee prime</item>
+        <item>Excalibr</item>
+        <item>Excalibr prime</item>
         <item>Nova</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
+        <item>Nova prime</item>
+        <item>Khora</item>
+        <item>Octavia</item>
+        <item>Frost</item>
+        <item>Frost prime</item>
+        <item>Limbo</item>
+        <item>Limbo prime</item>
     </string-array>
 
     <string-array name="archwing">

@@ -7,6 +7,10 @@ import android.graphics.BitmapFactory;
 import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.Display;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -101,7 +105,9 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         int pic = 0;
         switch(idcko){
             case 0:
-                data.setText("Description: "+ descriptions.get(index) );
+                SpannableString ss1=  new SpannableString("Description: "+ descriptions.get(index) );
+                ss1.setSpan(new RelativeSizeSpan(1.2f), 0,12, 0);
+                data.setText(ss1 );
                 desc.setText("Name: " + names.get(index)
                         + "\nMR: " + mrs.get(index)
                         + "\nHP: " + healts.get(index)
@@ -229,6 +235,30 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
                         return R.drawable.afuris;
                     case 5:
                         return R.drawable.afuris;
+                    case 6:
+                        return R.drawable.ash_prime;
+                    case 7:
+                        return R.drawable.ash_prime;
+                    case 8:
+                        return R.drawable.afuris;
+                    case 9:
+                        return R.drawable.ankyros_prime;
+                    case 11:
+                        return R.drawable.afuris;
+                    case 12:
+                        return R.drawable.afuris;
+                    case 13:
+                        return R.drawable.ash_prime;
+                    case 14:
+                        return R.drawable.ash_prime;
+                    case 15:
+                        return R.drawable.afuris;
+                    case 16:
+                        return R.drawable.ankyros_prime;
+                    case 17:
+                        return R.drawable.afuris;
+                    case 18:
+                        return R.drawable.afuris;
                     default:
                         return -1;
                 }
@@ -246,6 +276,30 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
                     case 4:
                         return R.drawable.afuris;
                     case 5:
+                        return R.drawable.afuris;
+                    case 6:
+                        return R.drawable.ash_prime;
+                    case 7:
+                        return R.drawable.ash_prime;
+                    case 8:
+                        return R.drawable.afuris;
+                    case 9:
+                        return R.drawable.ankyros_prime;
+                    case 10:
+                        return R.drawable.afuris;
+                    case 11:
+                        return R.drawable.afuris;
+                    case 12:
+                        return R.drawable.ash_prime;
+                    case 13:
+                        return R.drawable.ash_prime;
+                    case 14:
+                        return R.drawable.afuris;
+                    case 15:
+                        return R.drawable.ankyros_prime;
+                    case 16:
+                        return R.drawable.afuris;
+                    case 17:
                         return R.drawable.afuris;
                     default:
                         return -1;
