@@ -19,7 +19,7 @@
 	"speed": "1.2",
 	"power": "100/150",
 	"polarities": "1x naramon , 2x madurai",
-	"location": "\n   Lith s3\n   Meso C1, S3, N2, V4, V2\n   Neo N3, V4, N5\n    Axi N2, B1, N1"
+	"location": "\n   Lith s3\n   Meso C1, S3, N2, V4, V2\n   Neo N3, V4, N5\n   Axi N2, B1, N1"
 }, {
 	"name": "Atlas",
 	"mr": "0",
