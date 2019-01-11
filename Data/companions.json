@@ -7,7 +7,8 @@
 	"stamina": 8,
 	"power": 100,
 	"type": "Pets",
-	"imageName": "adarza-kavat.png"
+	"imageName": "adarza-kavat.png",
+	"location": "Kavat genetic code"
 }, {
 	"name": "Chesa Kubrow",
 	"description": "This Kubrow will disarm adversaries and retrieve the spoils of battle.",
@@ -17,7 +18,8 @@
 	"stamina": 8,
 	"power": 100,
 	"type": "Pets",
-	"imageName": "chesa-kubrow.png"
+	"imageName": "chesa-kubrow.png",
+	"location": "Egg"
 }, {
 	"name": "Raksa Kubrow",
 	"description": "Designed by the Orokin to be the perfect companion, a Kubrow was never far from its master's side. Loyal and obedient, these creatures made ideal bodyguards. Equipped with shield generators for added protection, their fierce growl could paralyze any attacker with fear.",
@@ -27,7 +29,8 @@
 	"stamina": 8,
 	"power": 100,
 	"type": "Pets",
-	"imageName": "raksa-kubrow.png"
+	"imageName": "raksa-kubrow.png",
+	"location": "Egg"
 }, {
 	"name": "Helminth Charger",
 	"description": "An Infested pet bred from the Helminth Cyst",
@@ -37,7 +40,8 @@
 	"stamina": 8,
 	"power": 100,
 	"type": "Pets",
-	"imageName": "helminth-charger.png"
+	"imageName": "helminth-charger.png",
+	"location": "Egg with inserted mutation"
 }, {
 	"name": "Huras Kubrow",
 	"description": "Prized for its ability to sneak up on unsuspecting prey, the Huras Kubrow were first used as hunting companions by the Orokin elite. Orokin Era Tenno soon adapted the strain for use in covert missions and assassinations.",
@@ -47,5 +51,6 @@
 	"stamina": 8,
 	"power": 100,
 	"type": "Pets",
-	"imageName": "huras-kubrow.png"
+	"imageName": "huras-kubrow.png",
+	"location": "Egg"
 }]
