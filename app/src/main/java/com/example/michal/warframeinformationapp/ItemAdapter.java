@@ -14,10 +14,8 @@ public class ItemAdapter extends BaseAdapter {
     String[] name;
     String[] descriptions;
 
-    public ItemAdapter(Context c, String[] i/*, String[] n, String[] d*/){
+    public ItemAdapter(Context c, String[] i){
         warframes = i;
-        //name = n;
-        //descriptions = d;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 

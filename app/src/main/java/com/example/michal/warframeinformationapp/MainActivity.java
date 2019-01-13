@@ -9,27 +9,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity /*implements TaskCompleted*/{
+public class MainActivity extends AppCompatActivity {
 
     ListView myListView;
     String[] main_board;
-    String[] prices;
-    String[] descriptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //JSONFrameparsing warframe = new JSONFrameparsing(MainActivity.this);
-        //warframe.execute();
-
         Resources res = getResources();
         myListView = (ListView) findViewById(R.id.myListView);
         main_board = res.getStringArray(R.array.main_board);
-        prices = res.getStringArray(R.array.prices);
-        descriptions = res.getStringArray(R.array.descriptions);
 
         myListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_list_view, main_board));
 
@@ -43,16 +35,5 @@ public class MainActivity extends AppCompatActivity /*implements TaskCompleted*/
         });
     }
 
-    /*@Override
-    public void onTaskComplete (final String[] name, final String[] mr, final String[] health, final String[] shield, final String[] armor, final String[] power, final String[] speed, final String[] description, final String[] polarities){
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent showListOfItemsActivity = new Intent(getApplicationContext(), ListOfItemsActivity.class);
-                showListOfItemsActivity.putExtra("ITEM_ID",position);
-                startActivity(showListOfItemsActivity);
-            }
-        });
-    }*/
 
 }

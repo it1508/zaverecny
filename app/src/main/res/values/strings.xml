@@ -11,84 +11,101 @@
     </string-array>
 
     <string-array name="warframes">
-        <item>Atlas</item>
         <item>Ash</item>
         <item>Ash prime</item>
+        <item>Atlas</item>
         <item>Banshee</item>
         <item>Banshee prime</item>
-        <item>Excalibr</item>
-        <item>Excalibr prime</item>
-        <item>Nova</item>
-        <item>Nova prime</item>
-        <item>Khora</item>
-        <item>Octavia</item>
+        <item>Chroma</item>
+        <item>Ember</item>
+        <item>Ember prime</item>
+        <item>Equinox</item>
+        <item>Excalibur</item>
+        <item>Excalibur prime</item>
         <item>Frost</item>
         <item>Frost prime</item>
-        <item>Limbo</item>
-        <item>Limbo prime</item>
+        <item>Gara</item>
+        <item>Harrow</item>
     </string-array>
 
     <string-array name="archwing">
-        <item>Odonata</item>
+        <item>Amesha</item>
+        <item>Elytron</item>
         <item>Itzal</item>
-        <item>Odonata Prime</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
+        <item>Odonata</item>
+        <item>Odonata prime</item>
     </string-array>
 
     <string-array name="melee">
-        <item>Zaw</item>
-        <item>Ack and Brunt</item>
-        <item>Sarpa</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
+        <item>Amphis</item>
+        <item>Ankyros</item>
+        <item>Ankyros Prime</item>
+        <item>Bo</item>
+        <item>Bo Prime</item>
+        <item>Boltace</item>
+        <item>Cronus</item>
+        <item>Dark dagger</item>
+        <item>Hirudo</item>
+        <item>Jat Kittag</item>
+        <item>Jat Kusar</item>
+        <item>Kama</item>
+        <item>Karyst</item>
+        <item>Kronen</item>
+        <item>Kronen Prime</item>
     </string-array>
 
     <string-array name="secondary">
-        <item>Pandero</item>
-        <item>Lato</item>
-        <item>Aklato</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
+        <item>Acrid</item>
+        <item>Afuris</item>
+        <item>Akbolto</item>
+        <item>Akbolto Prime</item>
+        <item>Akbronco</item>
+        <item>Akbronco Prime</item>
+        <item>Bronco</item>
+        <item>Bronco Prime</item>
+        <item>Cestra</item>
+        <item>Despair</item>
+        <item>Detron</item>
+        <item>Dex Furis</item>
+        <item>Embolist</item>
+        <item>Furis</item>
+        <item>Gammacor</item>
+        <item>Hikou</item>
     </string-array>
 
     <string-array name="primary">
-        <item>Opticor</item>
-        <item>Ignis</item>
-        <item>Ignis Wraith</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
+        <item>Amprex</item>
+        <item>Arca Plasmor</item>
+        <item>Argonak</item>
+        <item>Astilla</item>
+        <item>Attica</item>
+        <item>Battacor</item>
+        <item>Boar</item>
+        <item>Boar Prime</item>
+        <item>Braton</item>
+        <item>Braton Prime</item>
+        <item>Exergis</item>
+        <item>Ferrox</item>
+        <item>Karak</item>
+        <item>Kohm</item>
+        <item>Latron</item>
     </string-array>
 
     <string-array name="companions">
-        <item>smeeta Cavat</item>
+        <item>Adarza Kavat</item>
+        <item>Carrier</item>
+        <item>Carrier Prime</item>
+        <item>Chesa Kubrow</item>
+        <item>Dethcube</item>
+        <item>Diriga</item>
+        <item>Djinn</item>
         <item>Helios</item>
         <item>Helios prime</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-    </string-array>
-
-    <string-array name="prices">
-        <item>ne</item>
-        <item>ano</item>
-        <item>konecne</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-    </string-array>
-
-    <string-array name="descriptions">
-        <item>ne</item>
-        <item>ano</item>
-        <item>konecne</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
-        <item>Hydroid</item>
+        <item>Helminth Charger</item>
+        <item>Huras Kubrow</item>
+        <item>Raksa Kubrow</item>
+        <item>Sahasa Kubrow</item>
+        <item>Smeeta Kavat</item>
     </string-array>
     <string name="title_activity_main2">Main2Activity</string>
 </resources>

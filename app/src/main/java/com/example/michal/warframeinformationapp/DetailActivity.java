@@ -20,204 +20,131 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class DetailActivity extends AppCompatActivity /*implements TaskCompleted*/{
+public class DetailActivity extends AppCompatActivity {
     int idcko = 0;
-    //ListView secondListView;
     public static TextView data;
     public static TextView desc;
-    ArrayList<String> names = new ArrayList<String>();
-    ArrayList<String> shields = new ArrayList<String>();
-    ArrayList<String> healts = new ArrayList<String>();
-    ArrayList<String> mrs = new ArrayList<String>();
-    ArrayList<String> speeds = new ArrayList<String>();
-    ArrayList<String> armors = new ArrayList<String>();
-    ArrayList<String> descriptions = new ArrayList<String>();
-    ArrayList<String> locations = new ArrayList<String>();
-    ArrayList<String> powers = new ArrayList<String>();
-    ArrayList<String> polarities = new ArrayList<String>();
-    ArrayList<String> dispotions = new ArrayList<String>();
-    ArrayList<String> dmgs = new ArrayList<String>();
-    ArrayList<String> types = new ArrayList<String>();
-    ArrayList<String> noises = new ArrayList<String>();
-    ArrayList<String> accuracys = new ArrayList<String>();
-    ArrayList<String> criticalChances = new ArrayList<String>();
-    ArrayList<String> criticalMultipliers = new ArrayList<String>();
-    ArrayList<String> procChances = new ArrayList<String>();
-    ArrayList<String> fireRates = new ArrayList<String>();
-    ArrayList<String> ammos = new ArrayList<String>();
-    ArrayList<String> magazineSizes = new ArrayList<String>();
-    ArrayList<String> reloadTimes = new ArrayList<String>();
-    ArrayList<String> impacts = new ArrayList<String>();
-    ArrayList<String> slashs = new ArrayList<String>();
-    ArrayList<String> punctures = new ArrayList<String>();
-    ArrayList<String> images = new ArrayList<String>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        /*Resources res = getResources();
-        warframes = res.getStringArray(R.array.warframes);
-        prices = res.getStringArray(R.array.prices);
-        descriptions = res.getStringArray(R.array.descriptions);
-        Intent in = getIntent();*/
-
-        /*JSONFrameparsing warframe = new JSONFrameparsing(DetailActivity.this);
-        try {
-            warframe.execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
         Intent in = getIntent();
         int index = in.getIntExtra("com.example.michal.ITEM",-1);
         idcko = in.getIntExtra("com.example.michal.ID",-1);
-        names = in.getStringArrayListExtra("com.example.michal.FRAME");
-        shields = in.getStringArrayListExtra("com.example.michal.SHIELD");
-        mrs = in.getStringArrayListExtra("com.example.michal.MRS");
-        images = in.getStringArrayListExtra("com.example.michal.IMAGE");
-        descriptions = in.getStringArrayListExtra("com.example.michal.DESCRIPTION");
-        locations = in.getStringArrayListExtra("com.example.michal.LOCATION");
-        healts = in.getStringArrayListExtra("com.example.michal.HEALT");
-        armors = in.getStringArrayListExtra("com.example.michal.ARMOR");
-        powers = in.getStringArrayListExtra("com.example.michal.POWER");
-        polarities = in.getStringArrayListExtra("com.example.michal.POLARITIES");
-        speeds = in.getStringArrayListExtra("com.example.michal.SPEED");
-        accuracys = in.getStringArrayListExtra("com.example.michal.ACCURACY");
-        criticalChances = in.getStringArrayListExtra("com.example.michal.CRITCHANCE");
-        criticalMultipliers = in.getStringArrayListExtra("com.example.michal.CRITMULTIPLA");
-        ammos = in.getStringArrayListExtra("com.example.michal.AMMO");
-        magazineSizes = in.getStringArrayListExtra("com.example.michal.MAGAZINESIZE");
-        dmgs = in.getStringArrayListExtra("com.example.michal.DMG");
-        fireRates = in.getStringArrayListExtra("com.example.michal.FIRERATE");
-        dispotions = in.getStringArrayListExtra("com.example.michal.DISPOTION");
-        reloadTimes = in.getStringArrayListExtra("com.example.michal.RELOADTIME");
-        types = in.getStringArrayListExtra("com.example.michal.TYPE");
-        noises = in.getStringArrayListExtra("com.example.michal.NOISE");
-        procChances = in.getStringArrayListExtra("com.example.michal.PROCCHANCE");
-        slashs = in.getStringArrayListExtra("com.example.michal.SLASH");
-        impacts = in.getStringArrayListExtra("com.example.michal.IMPACT");
-        punctures = in.getStringArrayListExtra("com.example.michal.PUNCTURE");
         data = (TextView) findViewById(R.id.priceTextView);
         desc = (TextView) findViewById(R.id.atributesTextView);
         ImageView img = (ImageView) findViewById(R.id.ItemImageView);
         int pic = 0;
+        SpannableString ss1=  new SpannableString( "Description: ");
         switch(idcko){
             case 0:
-                SpannableString ss1=  new SpannableString("Description: "+ descriptions.get(index) );
+                ss1=  new SpannableString("Description: "+ Warframe.getDescription(index) );
                 ss1.setSpan(new RelativeSizeSpan(1.2f), 0,12, 0);
                 data.setText(ss1 );
-                desc.setText("Name: " + names.get(index)
-                        + "\nMR: " + mrs.get(index)
-                        + "\nHP: " + healts.get(index)
-                        + "\nShield: " + shields.get(index)
-                        + "\nArmor: " + armors.get(index)
-                        + "\nPower: " + powers.get(index)
-                        + "\nSpeed: " + speeds.get(index)
-                        + "\nLocation: " + locations.get(index));
-                setTitle(names.get(index));
+                desc.setText("Name: " + Warframe.getName(index)
+                        + "\nMR: " + Warframe.getMr(index)
+                        + "\nHP: " + Warframe.getHealth(index)
+                        + "\nShield: " + Warframe.getShield(index)
+                        + "\nArmor: " + Warframe.getArmor(index)
+                        + "\nPower: " + Warframe.getPower(index)
+                        + "\nSpeed: " + Warframe.getSpeed(index)
+                        + "\nLocation: " + Warframe.getLocation(index));
+                setTitle(Warframe.getName(index));
                 pic = getImg(index);
                 scaleImg(img,pic);
                 break;
             case 1:
-                data.setText("Description: "+ descriptions.get(index) );
-                desc.setText("Name: " + names.get(index)
-                        + "\nMR: " + mrs.get(index)
-                        + "\nHP: " + healts.get(index)
-                        + "\nShield: " + shields.get(index)
-                        + "\nArmor: " + armors.get(index)
-                        + "\nPower: " + powers.get(index));
-                setTitle(names.get(index));
+                ss1=  new SpannableString("Description: "+ Warframe.getDescription(index) );
+                ss1.setSpan(new RelativeSizeSpan(1.2f), 0,12, 0);
+                data.setText(ss1 );
+                desc.setText("Name: " + Warframe.getName(index)
+                        + "\nMR: " + Warframe.getMr(index)
+                        + "\nHP: " + Warframe.getHealth(index)
+                        + "\nShield: " + Warframe.getShield(index)
+                        + "\nArmor: " + Warframe.getArmor(index)
+                        + "\nPower: " + Warframe.getPower(index));
+                setTitle(Warframe.getName(index));
                 pic = getImg(index);
                 scaleImg(img,pic);
                 break;
             case 2:
-                data.setText("Description: "+ descriptions.get(index) );
-                desc.setText("Name: " + names.get(index)
-                        + "\nMR: " + mrs.get(index)
-                        + "\nCrittical Chance: " + criticalChances.get(index)
-                        + "\nCritical Multiplayer: " + criticalMultipliers.get(index)
-                        + "\nReload speed: " + reloadTimes.get(index)
-                        + "\nMagazine: " + magazineSizes.get(index)
-                        + "\nAmmo: " + ammos.get(index)
-                        + "\nFire rate: " + fireRates.get(index)
-                        + "\nAccucary: " + accuracys.get(index)
-                        + "\nProc. chance: " + procChances.get(index)
-                        + "\nNoise: " + noises.get(index)
-                        + "\nDamage: " + dmgs.get(index)
-                        + "\nDisposition: " + dispotions.get(index)
-                        + "\nType: " + types.get(index)
+                ss1=  new SpannableString("Description: "+ Warframe.getDescription(index) );
+                ss1.setSpan(new RelativeSizeSpan(1.2f), 0,12, 0);
+                data.setText(ss1 );
+                desc.setText("Name: " + Warframe.getName(index)
+                        + "\nMR: " + Warframe.getMr(index)
+                        + "\nCrittical Chance: " + Warframe.getCritChance(index)
+                        + "\nCritical Multiplayer: " + Warframe.getCritMulti(index)
+                        + "\nReload speed: " + Warframe.getReloadTime(index)
+                        + "\nMagazine: " + Warframe.getMagazineSize(index)
+                        + "\nAmmo: " + Warframe.getAmmo(index)
+                        + "\nFire rate: " + Warframe.getFireRate(index)
+                        + "\nAccucary: " + Warframe.getAccuracy(index)
+                        + "\nProc. chance: " + Warframe.getProcChance(index)
+                        + "\nNoise: " + Warframe.getNoise(index)
+                        + "\nDamage: " + Warframe.getDmg(index)
+                        + "\nDisposition: " + Warframe.getDispotion(index)
+                        + "\nType: " + Warframe.getType(index)
                 );
-                setTitle(names.get(index));
+                setTitle(Warframe.getName(index));
                 pic = getImg(index);
                 scaleImg(img,pic);
                 break;
             case 3:
-                data.setText("Description: "+ descriptions.get(index) );
-                desc.setText("Name: " + names.get(index)
-                        + "\nMR: " + mrs.get(index)
-                        + "\nCrittical Chance: " + criticalChances.get(index)
-                        + "\nCritical Multiplayer: " + criticalMultipliers.get(index)
-                        + "\nReload speed: " + reloadTimes.get(index)
-                        + "\nMagazine: " + magazineSizes.get(index)
-                        + "\nAmmo: " + ammos.get(index)
-                        + "\nFire rate: " + fireRates.get(index)
-                        + "\nAccucary: " + accuracys.get(index)
-                        + "\nProc. chance: " + procChances.get(index)
-                        + "\nNoise: " + noises.get(index)
-                        + "\nDamage: " + dmgs.get(index)
-                        + "\nDisposition: " + dispotions.get(index)
-                        + "\nType: " + types.get(index)
+                ss1=  new SpannableString("Description: "+ Warframe.getDescription(index) );
+                ss1.setSpan(new RelativeSizeSpan(1.2f), 0,12, 0);
+                data.setText(ss1 );
+                desc.setText("Name: " + Warframe.getName(index)
+                        + "\nMR: " + Warframe.getMr(index)
+                        + "\nCrittical Chance: " + Warframe.getCritChance(index)
+                        + "\nCritical Multiplayer: " + Warframe.getCritMulti(index)
+                        + "\nReload speed: " + Warframe.getReloadTime(index)
+                        + "\nMagazine: " + Warframe.getMagazineSize(index)
+                        + "\nAmmo: " + Warframe.getAmmo(index)
+                        + "\nFire rate: " + Warframe.getFireRate(index)
+                        + "\nAccucary: " + Warframe.getAccuracy(index)
+                        + "\nProc. chance: " + Warframe.getProcChance(index)
+                        + "\nNoise: " + Warframe.getNoise(index)
+                        + "\nDamage: " + Warframe.getDmg(index)
+                        + "\nDisposition: " + Warframe.getDispotion(index)
+                        + "\nType: " + Warframe.getType(index)
                 );
-                setTitle(names.get(index));
+                setTitle(Warframe.getName(index));
                 pic = getImg(index);
                 scaleImg(img,pic);
                 break;
             case 4:
-                data.setText("Description: "+ descriptions.get(index) );
-                desc.setText("Name: " + names.get(index)
-                        + "\nMR: " + mrs.get(index)
-                        + "\nCrittical Chance: " + criticalChances.get(index)
-                        + "\nCritical Multiplayer: " + criticalMultipliers.get(index)
-                        + "\nSpeed: " + fireRates.get(index)
-                        + "\nProc. chance: " + procChances.get(index)
-                        + "\nDamage: " + dmgs.get(index)
-                        + "\nDisposition: " + dispotions.get(index)
+                ss1=  new SpannableString("Description: "+ Warframe.getDescription(index) );
+                ss1.setSpan(new RelativeSizeSpan(1.2f), 0,12, 0);
+                data.setText(ss1 );
+                desc.setText("Name: " + Warframe.getName(index)
+                        + "\nMR: " + Warframe.getMr(index)
+                        + "\nCrittical Chance: " + Warframe.getCritChance(index)
+                        + "\nCritical Multiplayer: " + Warframe.getCritMulti(index)
+                        + "\nSpeed: " + Warframe.getFireRate(index)
+                        + "\nProc. chance: " + Warframe.getProcChance(index)
+                        + "\nDamage: " + Warframe.getDmg(index)
+                        + "\nDisposition: " + Warframe.getDispotion(index)
                 );
-                setTitle(names.get(index));
+                setTitle(Warframe.getName(index));
                 pic = getImg(index);
                 scaleImg(img,pic);
                 break;
             case 5:
-                data.setText("Description: "+ descriptions.get(index) );
-                desc.setText("Name: " + names.get(index)
-                        + "\nHP: " + healts.get(index)
-                        + "\nShield: " + shields.get(index)
-                        + "\nArmor: " + armors.get(index)
-                        + "\nPower: " + powers.get(index));
+                ss1=  new SpannableString("Description: "+ Warframe.getDescription(index) );
+                ss1.setSpan(new RelativeSizeSpan(1.2f), 0,12, 0);
+                data.setText(ss1 );
+                desc.setText("Name: " + Warframe.getName(index)
+                        + "\nHP: " + Warframe.getHealth(index)
+                        + "\nShield: " + Warframe.getShield(index)
+                        + "\nArmor: " + Warframe.getArmor(index)
+                        + "\nPower: " + Warframe.getPower(index));
 
-                setTitle(names.get(index));
+                setTitle(Warframe.getName(index));
                 pic = getImg(index);
                 scaleImg(img,pic);
                 break;
         }
-
-        //data.setText("Name: " + names.get(index) + "\nMR: " + mrs.get(index) );
-
-        /*int index = in.getIntExtra("com.example.michal.ITEM", -1);
-        if(index > -1){
-            int pic = getImg(index);
-            ImageView img = (ImageView) findViewById(R.id.ItemImageView);
-            scaleImg(img,pic);
-            TextView nameTextView = (TextView) findViewById(R.id.nameTextView);
-            TextView priceTextView = (TextView) findViewById(R.id.priceTextView);
-            String name = warframes[index];
-            String price = prices[index];
-            nameTextView.setText(name);
-            priceTextView.setText(price);
-        }*/
-
     }
     private int getImg(int jmeno){
         switch(idcko) {
@@ -251,14 +178,6 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
                         return R.drawable.ash_prime;
                     case 14:
                         return R.drawable.ash_prime;
-                    case 15:
-                        return R.drawable.afuris;
-                    case 16:
-                        return R.drawable.ankyros_prime;
-                    case 17:
-                        return R.drawable.afuris;
-                    case 18:
-                        return R.drawable.afuris;
                     default:
                         return -1;
                 }
@@ -274,32 +193,6 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
                     case 3:
                         return R.drawable.ankyros_prime;
                     case 4:
-                        return R.drawable.afuris;
-                    case 5:
-                        return R.drawable.afuris;
-                    case 6:
-                        return R.drawable.ash_prime;
-                    case 7:
-                        return R.drawable.ash_prime;
-                    case 8:
-                        return R.drawable.afuris;
-                    case 9:
-                        return R.drawable.ankyros_prime;
-                    case 10:
-                        return R.drawable.afuris;
-                    case 11:
-                        return R.drawable.afuris;
-                    case 12:
-                        return R.drawable.ash_prime;
-                    case 13:
-                        return R.drawable.ash_prime;
-                    case 14:
-                        return R.drawable.afuris;
-                    case 15:
-                        return R.drawable.ankyros_prime;
-                    case 16:
-                        return R.drawable.afuris;
-                    case 17:
                         return R.drawable.afuris;
                     default:
                         return -1;
@@ -319,6 +212,24 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
                         return R.drawable.afuris;
                     case 5:
                         return R.drawable.afuris;
+                    case 6:
+                        return R.drawable.amprex;
+                    case 7:
+                        return R.drawable.astilla;
+                    case 8:
+                        return R.drawable.arca_plasmor;
+                    case 9:
+                        return R.drawable.attica;
+                    case 10:
+                        return R.drawable.afuris;
+                    case 11:
+                        return R.drawable.afuris;
+                    case 12:
+                        return R.drawable.arca_plasmor;
+                    case 13:
+                        return R.drawable.attica;
+                    case 14:
+                        return R.drawable.afuris;
                     default:
                         return -1;
                 }
@@ -326,16 +237,36 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
             case 3: {
                 switch (jmeno) {
                     case 0:
-                        return R.drawable.acrid;
+                        return R.drawable.amprex;
                     case 1:
-                        return R.drawable.akbronco;
+                        return R.drawable.astilla;
                     case 2:
-                        return R.drawable.afuris;
+                        return R.drawable.arca_plasmor;
                     case 3:
-                        return R.drawable.ankyros_prime;
+                        return R.drawable.attica;
                     case 4:
                         return R.drawable.afuris;
                     case 5:
+                        return R.drawable.afuris;
+                    case 6:
+                        return R.drawable.amprex;
+                    case 7:
+                        return R.drawable.astilla;
+                    case 8:
+                        return R.drawable.arca_plasmor;
+                    case 9:
+                        return R.drawable.attica;
+                    case 10:
+                        return R.drawable.afuris;
+                    case 11:
+                        return R.drawable.afuris;
+                    case 12:
+                        return R.drawable.arca_plasmor;
+                    case 13:
+                        return R.drawable.attica;
+                    case 14:
+                        return R.drawable.afuris;
+                    case 15:
                         return R.drawable.afuris;
                     default:
                         return -1;
@@ -344,16 +275,34 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
             case 4: {
                 switch (jmeno) {
                     case 0:
-                        return R.drawable.acrid;
+                        return R.drawable.amprex;
                     case 1:
-                        return R.drawable.adarza_kavat;
+                        return R.drawable.astilla;
                     case 2:
-                        return R.drawable.afuris;
+                        return R.drawable.arca_plasmor;
                     case 3:
-                        return R.drawable.ankyros_prime;
+                        return R.drawable.attica;
                     case 4:
                         return R.drawable.afuris;
                     case 5:
+                        return R.drawable.afuris;
+                    case 6:
+                        return R.drawable.amprex;
+                    case 7:
+                        return R.drawable.astilla;
+                    case 8:
+                        return R.drawable.arca_plasmor;
+                    case 9:
+                        return R.drawable.attica;
+                    case 10:
+                        return R.drawable.afuris;
+                    case 11:
+                        return R.drawable.afuris;
+                    case 12:
+                        return R.drawable.arca_plasmor;
+                    case 13:
+                        return R.drawable.attica;
+                    case 14:
                         return R.drawable.afuris;
                     default:
                         return -1;
@@ -362,17 +311,33 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
             case 5: {
                 switch (jmeno) {
                     case 0:
-                        return R.drawable.acrid;
+                        return R.drawable.amprex;
                     case 1:
-                        return R.drawable.adarza_kavat;
+                        return R.drawable.astilla;
                     case 2:
-                        return R.drawable.afuris;
+                        return R.drawable.arca_plasmor;
                     case 3:
-                        return R.drawable.ankyros_prime;
+                        return R.drawable.attica;
                     case 4:
                         return R.drawable.afuris;
                     case 5:
                         return R.drawable.afuris;
+                    case 6:
+                        return R.drawable.amprex;
+                    case 7:
+                        return R.drawable.astilla;
+                    case 8:
+                        return R.drawable.arca_plasmor;
+                    case 9:
+                        return R.drawable.attica;
+                    case 10:
+                        return R.drawable.afuris;
+                    case 11:
+                        return R.drawable.afuris;
+                    case 12:
+                        return R.drawable.arca_plasmor;
+                    case 13:
+                        return R.drawable.attica;
                     default:
                         return -1;
                 }
@@ -399,17 +364,4 @@ public class DetailActivity extends AppCompatActivity /*implements TaskCompleted
         Bitmap scaleImg = BitmapFactory.decodeResource(getResources(),pic,options);
         img.setImageBitmap(scaleImg);
     }
-
-    /*@Override
-    public void onTaskComplete(String[] name, String[] mr, String[] health, String[] shield, String[] armor, String[] power, String[] speed, String[] description, String[] polarities) {
-    name1 = name;
-    mr1 = mr;
-    hp1 = health;
-    shield1 = shield;
-    armor1 = armor;
-    power1 = power;
-    description1 = description;
-    speed1 = speed;
-    polarities1 = polarities;
-    }*/
 }
