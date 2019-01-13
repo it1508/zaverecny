@@ -19,7 +19,7 @@
 	"speed": "1.2",
 	"power": "100/150",
 	"polarities": "1x naramon , 2x madurai",
-	"location": "\n   Lith s3\n   Meso C1, S3, N2, V4, V2\n   Neo N3, V4, N5\n   Axi N2, B1, N1"
+	"location": "\n   Lith S3\n   Meso C1, S3, N2, V4, V2\n   Neo N3, V4, N5\n   Axi N2, B1, N1"
 }, {
 	"name": "Atlas",
 	"mr": "0",
@@ -52,7 +52,7 @@
 	"speed": "1.15",
 	"power": "175/262.5",
 	"polarities": "1x naramon, 2x madurai",
-	"location": "Axi C3, (Lith B5, Neo K2, Neo S7), Meso B2, Neo B"
+	"location": "\n   Lith B5, V5\n   Meso T2, S4, B2\n   Neo H1, N7, T1, V7, K2, S7, B1;2;4;5\n   Axi C3, K3, B1;2"
 }, {
 	"name": "Chroma",
 	"description": "This is Chroma, an ancient legend, master of the elements. When all the land is in ruins, Tenno, only Chroma will remain.\n_Lotus_",
@@ -85,5 +85,89 @@
 	"speed": "1.1",
 	"power": "150/225",
 	"polarities": "2x naramon",
-	"location": "Void relics:"
+	"location": "\n   Lith G1\n   Meso E1, F2;3\n   Neo E1, S5, F1\n   Axi E1,S2"
+}
+, {
+	"name": "Equinox",
+	"description": "This is Equinox, a deadly duality. A true Tenno must master the divide between night and day. Do you have what it takes?\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "100/300",
+	"armor": "100",
+	"speed": "1.15",
+	"power": "150/225",
+	"polarities": "1x vazarin, 1x madurai",
+	"location": "Tyl Regor - Titania, Uranus"
+}
+, {
+	"name": "Excalibur",
+	"description": "This is Excalibur, a master of gun and blade. No matter your style, Tenno, the Excalibur Warframe is a formidable choice.\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "100/300",
+	"armor": "225",
+	"speed": "1.0",
+	"power": "100/150",
+	"polarities": "1x vazarin, 1x madurai",
+	"location": "Lt. Lech Kril - War, Mars"
+}
+, {
+	"name": "Excalibur prime",
+	"description": "This is Excalibur, a master of gun and blade. No matter your style, Tenno, the Excalibur Warframe is a formidable choice.\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "100/300",
+	"armor": "250",
+	"speed": "1.0",
+	"power": "100/150",
+	"polarities": "1x vazarin, 2x madurai",
+	"location": "Founders Program"
+}
+, {
+	"name": "Frost",
+	"description": "This is Frost, colder and deadlier than space itself. Frost can protect or punish, the decision is yours.\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "150/450",
+	"armor": "300",
+	"speed": "0.95",
+	"power": "100/150",
+	"polarities": "1x naramon, 1x vazarin",
+	"location": "Lt Lech Kril & Captain Vor - Exta, Ceres"
+}
+, {
+	"name": "Frost prime",
+	"description": "This is Frost, colder and deadlier than space itself. Frost can protect or punish, the decision is yours.\n_Lotus_",
+	"mr": "8",
+	"health": "100/300",
+	"shield": "125/375",
+	"armor": "300",
+	"speed": "0.95",
+	"power": "150/225",
+	"polarities": "1x naramon, 2x vazarin",
+	"location": "\n   Lith G1;2\n Meso F2;3, E1\n   Neo F1, E1, S5\n   Axi E1"
+}
+, {
+	"name": "Gara",
+	"description": "This is Gara, the unbreakable warrior. Manipulator of glass, she fractures the resolve of her enemies. The shattered remains of her enemies are all that Gara leaves behind. Tread lightly.\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "100/300",
+	"armor": "125",
+	"speed": "1.15",
+	"power": "150/225",
+	"polarities": "2x madurai",
+	"location": "Quest - Saya's vigil"
+}
+, {
+	"name": "Harrow",
+	"description": "This is Ember, destructive and deadly. Ember's presence on the battlefield is devastating. Mind the heat, Tenno.\n_Lotus_",
+	"mr": "0",
+	"health": "100/300",
+	"shield": "150/450",
+	"armor": "150",
+	"speed": "1.0",
+	"power": "100/150",
+	"polarities": "none",
+	"location": "Quest - Chains of Harrow"
 }]
